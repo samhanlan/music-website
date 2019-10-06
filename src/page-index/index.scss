@@ -1,0 +1,63 @@
+$bg: #fefffd;
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: $bg;
+}
+
+#logo {
+    width: 33.3vw;
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.link-ring-graphic {
+    width: 50%;
+    height: auto;
+    position: fixed;
+    z-index: 1;
+    font-family: sans-serif;
+}
+
+#audio-eng-link-ring {
+    top: -10%;
+    right: 15%;
+}
+
+#singer-songwriter-link-ring {
+    bottom: 1%;
+    left: -4%;
+}
+
+#electronic-musician-link-ring {
+    bottom: -9%;
+    right: -5%;
+}
+
+.collage-img {
+    position: fixed;
+}
+
+#singer-songwriter-collage {
+    bottom: 0;
+    left: 0;
+    width: 33.3vw;
+}
+
+#audio-eng-collage {
+    top: 0;
+    right: 25vw;
+    width: 50vw;
+}
+
+#electronic-music-collage {
+    bottom: 0;
+    right: 0;
+    width: 33.3vw;
+}
