@@ -7,68 +7,46 @@
     </head>
     <body>
         <img id="logo" src="./assets/SH_logo.jpg"/>
-        <svg id="singer-songwriter-link-ring" class="link-ring-graphic" viewBox="26 26 154 154" width="200" height="200">
+        <svg id="singer-songwriter-link-ring" class="link-ring-graphic" viewBox="12.5 12.5 175 175" width="200" height="200">
             <defs>
-                <path id="curve-ref" d="m 100,100 m -75,0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"></path>
+                <path id="curve-ref-1" d="m 25,100 a 75,75 0 1 1 150,0 75,75 0 1 1 -150,0 m 75,0"></path>
             </defs>
-            <circle id="curve" fill="none" stroke="black" stroke-width="2" cx="100" cy="100" r="55"></circle>
-            <text fill="black">
-                <textPath xlink:href="#curve-ref" href="#curve-ref" text-anchor="middle" startOffset="60%">
+            <circle id="curve-1" fill="none" stroke="black" stroke-width="2" cx="100" cy="100" r="65"></circle>
+            <text fill="black" letter-spacing="-0.5">
+                <textPath xlink:href="#curve-ref-1" href="#curve-ref-1" text-anchor="end" startOffset="0">
                     singer songwriter
-                    <animate
-                        values="100%; 60%"
-                        keyTimes="0; 1"
-                        calcMode="spline"
-                        keySplines="0 0.7 0.9 1"
-                        attributeName="startOffset"
-                        begin="click"
-                        dur="1s"
-                        repeatCount="0"/>
+                    <animate values="0%; 47%" keyTimes="0; 1" calcMode="spline" keySplines="0 0.9 0.95 1" fill="freeze" attributeName="startOffset" begin="0s" dur="1.2s" repeatCount="0"></animate>
                 </textPath>
             </text>
         </svg>
-        <img id="singer-songwriter-collage" class="collage-img" src="./assets/SH_category_link_singer.jpg"/>
-        <svg id="audio-eng-link-ring" class="link-ring-graphic" viewBox="26 26 154 154" width="200" height="200">
+        <img id="singer-songwriter-collage" class="collage-img" src="./assets/SH_collage_link_singer.png"/>
+        
+        <svg id="audio-eng-link-ring" class="link-ring-graphic" viewBox="12.5 12.5 175 175" width="200" height="200">
             <defs>
-                <path id="curve-ref" d="m 100,100 m -75,0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"></path>
+                <path id="curve-ref-2" d="m 100,100 m -82.5,0 a 82.5,82.5 0 1,0 165,0 a 82.5,82.5 0 1,0 -165,0"></path>
             </defs>
-            <circle id="curve" fill="none" stroke="black" stroke-width="2" cx="100" cy="100" r="55"></circle>
+            <circle id="curve-2" fill="none" stroke="black" stroke-width="2" cx="100" cy="100" r="65"></circle>
             <text fill="black">
-                <textPath xlink:href="#curve-ref" href="#curve-ref" text-anchor="middle" startOffset="40%">
+                <textPath xlink:href="#curve-ref-2" href="#curve-ref-2" text-anchor="end" startOffset="0">
                     audio engineer
-                    <animate
-                        values="80%; 40%"
-                        keyTimes="0; 1"
-                        calcMode="spline"
-                        keySplines="0 0.7 0.9 1"
-                        attributeName="startOffset"
-                        begin="click"
-                        dur="1s"
-                        repeatCount="0"/>
+                    <animate values="90%; 40%" keyTimes="0; 1" calcMode="spline" keySplines="0 0.85 0.97 1" fill="freeze" attributeName="startOffset" begin="0.8s" dur="1.2s" repeatCount="0"></animate>
                 </textPath>
             </text>
         </svg>
-        <img id="audio-eng-collage" class="collage-img" src="./assets/SH_category_link_audio.jpg"/>
-        <svg id="electronic-musician-link-ring" class="link-ring-graphic" viewBox="26 26 154 154" width="200" height="200">
+        <img id="audio-eng-collage" class="collage-img" src="./assets/SH_collage_link_audio.png"/>
+        
+        <svg id="electronic-musician-link-ring" class="link-ring-graphic" viewBox="12.5 12.5 175 175" width="200" height="200" xmlns="http://www.w3.org/2000/svg" version="1.1">
             <defs>
-                <path id="curve-ref" d="m 100,100 m -75,0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"></path>
+                <path id="curve-ref-3" d="m 25,100 a 75,75 0 1 1 150,0 75,75 0 1 1 -150,0 m 75,0"></path>
             </defs>
-            <circle id="curve" fill="none" stroke="black" stroke-width="2" cx="100" cy="100" r="55"></circle>
-            <text fill="black">
-                <textPath xlink:href="#curve-ref" href="#curve-ref" text-anchor="middle" startOffset="92%">
+            <circle id="curve-3" fill="none" stroke="black" stroke-width="2" cx="100" cy="100" r="65"></circle>
+            <text fill="black" letter-spacing="-0.5">
+                <textPath xlink:href="#curve-ref-3" href="#curve-ref-3" text-anchor="start" startOffset="50%">
                     electronic musician
-                    <animate
-                        values="40%; 92%"
-                        keyTimes="0; 1"
-                        calcMode="spline"
-                        keySplines="0 0.7 0.9 1"
-                        attributeName="startOffset"
-                        begin="click"
-                        dur="1s"
-                        repeatCount="0"/>
+                    <animate values="50%; 0%" keyTimes="0; 1" calcMode="spline" keySplines="0 0.87 0.95 1" fill="freeze" attributeName="startOffset" begin="1.8s" dur="1.2s" repeatCount="0"></animate>
                 </textPath>
             </text>
         </svg>
-        <img id="electronic-music-collage" class="collage-img" src="./assets/SH_category_link_electronic.jpg"/>
+        <img id="electronic-music-collage" class="collage-img" src="./assets/SH_collage_link_electro.png"/>
     </body>
 </html>
