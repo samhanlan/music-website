@@ -7,9 +7,12 @@ module.exports = merge(common, {
     devServer: {
         hot: false,
         inline: false,
+        writeToDisk: true,
     },
     output: {
-        filename: '[name].bundle.js'
+        filename(chunkData) {
+            return chunkData.chunk.name === 'index' ? 'index.bundle.js' : '[name]/index.bundle.js'
+        }
     },
     plugins: [
         // NB: repeat this instantiation for all separate html files
@@ -23,7 +26,7 @@ module.exports = merge(common, {
             template: './src/page-singer-songwriter/index.html',
             inject: true,
             chunks: ['singer-songwriter'],
-            filename: 'singer-songwriter.html',
+            filename: 'singer-songwriter/index.html',
         }),
     ],
     module: {

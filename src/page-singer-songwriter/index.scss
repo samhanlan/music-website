@@ -1,4 +1,143 @@
+$bg: #14171c;
+$text: #dfe3ba;
+$max-height: 48rem;
+$max-width: $max-height / 1.61803398875;
+
+$screen-sm: 1024px;
+$screen-sm-min: $screen-sm - 1; 
+
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    font-size: 16px;
+    @media only screen 
+    and (min-width: $screen-sm)
+    and (max-height: 1366px)
+    and (-webkit-min-device-pixel-ratio: 1.5) {
+        font-size: 24px;
+    }
+}
+
+body {
+    background-color: $bg;
+    color: $text;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    display: block;
+    height: 100%;
+    overflow: hidden;
+
+    @media screen and (min-width: $screen-sm-min) {
+        max-width: $max-height;
+        max-width: $max-width;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+}
+
+.header-title-img {
+    width: 6.6rem;
+    margin: 2rem 0 0 2rem;
+}
+
+.header-lower {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.header-rocks {
+    width: 6.6rem;
+}
+
+.header-subtitle {
+    color: $text;
+    display: flex;
+    align-items: flex-end;
+    flex-flow: column;
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+}
+
+.header-subtitle-sharp-relief {
+    width: 6.6rem;
+}
+
+.content-wrap {
+    padding: 0 2rem;
+    height: calc(100% - 10rem);
+    overflow: scroll;
+}
+
+.content-viewer {
+    display: block;
+    padding-bottom: 10rem;
+}
+
+.content-cover {
+    display: block;
+    overflow: hidden;
+    height: 0;
+    background-image: url(assets/SS_share_relief_cover.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 150%;
+    padding-top: 150%;
+}
+
+.section {
+    display: block;
+    margin-top: 2rem;
+
+    h3 {
+        font-weight: normal;
+    }
+}
+
+.scroll-here-wrap {
+    position: absolute;
+    height: 6.6rem;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: $bg;
+}
+
+.scroll-here {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    width: 1.5rem;
+}
+
+.footer-rocks {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 10rem;
+    width: auto;
+}
+
+@media screen and (max-width: $screen-sm) and (orientation: landscape) {
+    .footer-rocks { display: none; }
+    .scroll-here-wrap { display: none; }
 }

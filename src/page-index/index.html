@@ -8,19 +8,21 @@
     <body>
         <img id="logo" src="./assets/SH_logo.jpg"/>
 
-        <svg id="singer-songwriter-link-ring" class="link-ring-graphic" viewBox="12.5 12.5 175 175">
-            <defs>
-                <path id="curve-ref-1" d="m 25,100 a 75,75 0 1 1 150,0 75,75 0 1 1 -150,0 m 75,0"></path>
-            </defs>
-            <circle id="curve-1" fill="none" stroke="black" stroke-width="2" cx="100" cy="100" r="65"></circle>
-            <text fill="black" letter-spacing="-0.5">
-                <textPath xlink:href="#curve-ref-1" href="#curve-ref-1" text-anchor="end" startOffset="0">
-                    singer songwriter
-                    <animate values="0%; 47%" keyTimes="0; 1" calcMode="spline" keySplines="0 0.9 0.95 1" fill="freeze" attributeName="startOffset" begin="0s" dur="1.2s" repeatCount="0"></animate>
-                </textPath>
-            </text>
-        </svg>
-        <img id="singer-songwriter-collage" class="collage-img" src="./assets/SH_collage_link_singer.png"/>
+        <a href="/singer-songwriter">
+            <svg id="singer-songwriter-link-ring" class="link-ring-graphic" viewBox="12.5 12.5 175 175">
+                <defs>
+                    <path id="curve-ref-1" d="m 25,100 a 75,75 0 1 1 150,0 75,75 0 1 1 -150,0 m 75,0"></path>
+                </defs>
+                <circle id="curve-1" fill="none" stroke="black" stroke-width="2" cx="100" cy="100" r="65"></circle>
+                <text fill="black" letter-spacing="-0.5">
+                    <textPath xlink:href="#curve-ref-1" href="#curve-ref-1" text-anchor="end" startOffset="0">
+                        singer songwriter
+                        <animate values="0%; 47%" keyTimes="0; 1" calcMode="spline" keySplines="0 0.9 0.95 1" fill="freeze" attributeName="startOffset" begin="0s" dur="1.2s" repeatCount="0"></animate>
+                    </textPath>
+                </text>
+            </svg>
+            <img id="singer-songwriter-collage" class="collage-img" src="./assets/SH_collage_link_singer.png"/>
+        </a>
         
         <!-- portrait -->
         <svg id="audio-eng-link-ring" class="link-ring-graphic" viewBox="12.5 12.5 175 175">
@@ -51,18 +53,20 @@
         </svg>
         <img id="audio-eng-collage" class="collage-img landscape" src="./assets/SH_collage_link_audio.png"/>
         
-        <svg id="electronic-musician-link-ring" class="link-ring-graphic" viewBox="12.5 12.5 175 175" xmlns="http://www.w3.org/2000/svg" version="1.1">
-            <defs>
-                <path id="curve-ref-3" d="m 25,100 a 75,75 0 1 1 150,0 75,75 0 1 1 -150,0 m 75,0"></path>
-            </defs>
-            <circle id="curve-3" fill="none" stroke="black" stroke-width="2" cx="100" cy="100" r="65"></circle>
-            <text fill="black" letter-spacing="-0.5">
-                <textPath xlink:href="#curve-ref-3" href="#curve-ref-3" text-anchor="start" startOffset="50%">
-                    electronic musician
-                    <animate values="50%; 0%" keyTimes="0; 1" calcMode="spline" keySplines="0 0.87 0.95 1" fill="freeze" attributeName="startOffset" begin="1.8s" dur="1.2s" repeatCount="0"></animate>
-                </textPath>
-            </text>
-        </svg>
-        <img id="electronic-music-collage" class="collage-img" src="./assets/SH_collage_link_electro.png"/>
+        <a>
+            <svg id="electronic-musician-link-ring" class="link-ring-graphic" viewBox="12.5 12.5 175 175" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <defs>
+                    <path id="curve-ref-3" d="m 25,100 a 75,75 0 1 1 150,0 75,75 0 1 1 -150,0 m 75,0"></path>
+                </defs>
+                <circle id="curve-3" fill="none" stroke="black" stroke-width="2" cx="100" cy="100" r="65"></circle>
+                <text fill="black" letter-spacing="-0.5">
+                    <textPath xlink:href="#curve-ref-3" href="#curve-ref-3" text-anchor="start" startOffset="50%">
+                        electronic musician
+                        <animate values="50%; 0%" keyTimes="0; 1" calcMode="spline" keySplines="0 0.87 0.95 1" fill="freeze" attributeName="startOffset" begin="1.8s" dur="1.2s" repeatCount="0"></animate>
+                    </textPath>
+                </text>
+            </svg>
+            <img id="electronic-music-collage" class="collage-img" src="./assets/SH_collage_link_electro.png"/>
+        </a>
     </body>
 </html>
