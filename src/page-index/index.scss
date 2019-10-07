@@ -1,3 +1,11 @@
+$mobile-xs: 320px - 1;
+$mobile-sm: 375px - 1;
+$mobile-md: 425px - 1;
+$tablet: 768px - 1;
+$screen-md: 1024px - 1;
+$screen-lg: 1440px - 1;
+$screen-xl: 2560px - 1;
+
 $bg: #fefffd;
 $dark: #0b0608;
 
@@ -6,69 +14,131 @@ $dark: #0b0608;
     margin: 0;
 }
 
+html {
+    font-size: 24px;
+    @media screen and (min-width: $mobile-md) and (orientation: landscape) { font-size: 24px; }
+    @media screen and (min-width: $tablet) and (orientation: portrait) { font-size: 42px; }
+    @media screen and (min-width: $tablet) and (orientation: landscape) { font-size: 28px; }
+    @media screen and (min-width: $screen-md) and (orientation: landscape) { font-size: 42px; }
+}
+
 body {
     background-color: $bg;
 }
 
 #logo {
-    width: 33.3vw;
+    max-width: 20rem;
     position: fixed;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+    width: 50%;
 
-.link-ring-graphic {
-    width: 66.6%;
-    height: auto;
-    position: fixed;
-    z-index: 0;
-    
-    text {
-        font-size: 12px;
-        font-family: sans-serif;
-        color: $dark;
+    @media (min-width: $tablet) { width: 33.3%; }
+
+    @media screen and (orientation: landscape) {
+        top: 1rem;
+        transform: translate(-50%, 0);
+        width: auto;
+        height: 33.3vh;
     }
-
-    circle {
-        stroke: $dark;
-        stroke-width: 1px;
-    }
-}
-
-#audio-eng-link-ring {
-    top: -16%;
-    right: 11%;
-}
-
-#singer-songwriter-link-ring {
-    bottom: -5%;
-    left: -24%;
-}
-
-#electronic-musician-link-ring {
-    bottom: -14%;
-    right: -21%;
 }
 
 .collage-img {
     position: fixed;
 }
 
+.link-ring-graphic {
+    height: auto;
+    position: fixed;
+    z-index: 0;
+    width: 10.5rem;
+    
+    text {
+        font-size: 0.6rem;
+        font-family: sans-serif;
+        color: $dark;
+
+        @media screen and (min-width: $mobile-md) and (orientation: portrait) { font-size: 0.7rem; }
+        @media screen and (min-width: $mobile-md) and (orientation: landscape) { font-size: 0.7rem; }
+        @media screen and (min-width: $tablet) and (orientation: portrait) { font-size: 0.33rem; }
+        @media screen and (min-width: $tablet) and (orientation: landscape) { font-size: 0.5rem; }
+        @media screen and (min-width: $screen-md) and (orientation: portrait) { font-size: 0.4rem; }
+        @media screen and (min-width: $screen-md) and (orientation: landscape) { font-size: 0.33rem; }
+    }
+
+    circle {
+        fill: none;
+        stroke: $dark;
+        stroke-width: 1px;
+    }
+}
+
+
+// singer songwriter
+#singer-songwriter-link-ring {
+    bottom: -1rem;
+    left: -4rem;
+    transform: rotate(25deg);
+}
+
 #singer-songwriter-collage {
     bottom: 0;
     left: 0;
-    width: 33.3vw;
+    width: 6rem;
 }
 
-#audio-eng-collage {
-    top: 0;
-    right: 25vw;
-    width: 50vw;
+#singer-songwriter-collage,
+#electronic-music-collage {
+    width: 5.5rem;
+}
+
+// electronic musician
+#electronic-musician-link-ring {
+    transform: rotate(-26deg);
+    bottom: -2rem;
+    right: -3.5rem;
 }
 
 #electronic-music-collage {
     bottom: 0;
     right: 0;
-    width: 33.3vw;
+}
+
+// audio engineer
+#audio-eng-link-ring {
+    display: block;
+    top: -4rem;
+    right: calc(50% - 5.5rem);
+
+    &.landscape {
+        display: none;
+        top: unset;
+        bottom: -3rem;
+    }
+
+    @media screen and (orientation: landscape) {
+        display: none;
+        &.landscape { display: block; }
+    }
+}
+
+#audio-eng-collage {
+    top: 0;
+    right: calc(50% - 4.5rem);
+    width: 8rem;
+
+    &.landscape {
+        display: none;
+        top: unset;
+        right: calc(50% - 5rem);
+        bottom: 0;
+        transform: rotate(180deg);
+        width: 9.5rem;
+    }
+
+    @media screen and (orientation: landscape) {
+        display: none;
+        &.landscape { display: block; }
+    }
 }
