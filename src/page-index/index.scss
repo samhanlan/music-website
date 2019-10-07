@@ -1,25 +1,15 @@
-$mobile-xs: 320px - 1;
-$mobile-sm: 375px - 1;
-$mobile-md: 425px - 1;
-$tablet: 768px - 1;
-$screen-md: 1024px - 1;
-$screen-lg: 1440px - 1;
-$screen-xl: 2560px - 1;
+@import '../styles/normalise';
+@import '../styles/viewports';
 
 $bg: #fefffd;
 $dark: #0b0608;
 
-* {
-    padding: 0;
-    margin: 0;
-}
-
 html {
     font-size: 24px;
-    @media screen and (min-width: $mobile-md) and (orientation: landscape) { font-size: 24px; }
-    @media screen and (min-width: $tablet) and (orientation: portrait) { font-size: 42px; }
-    @media screen and (min-width: $tablet) and (orientation: landscape) { font-size: 28px; }
-    @media screen and (min-width: $screen-md) and (orientation: landscape) { font-size: 42px; }
+    @media screen and (min-width: $mobile-md-min) and (orientation: landscape) { font-size: 24px; }
+    @media screen and (min-width: $tablet-min) and (orientation: portrait) { font-size: 42px; }
+    @media screen and (min-width: $tablet-min) and (orientation: landscape) { font-size: 28px; }
+    @media screen and (min-width: $screen-md-min) and (orientation: landscape) { font-size: 42px; }
 }
 
 body {
@@ -34,7 +24,7 @@ body {
     transform: translate(-50%, -50%);
     width: 50%;
 
-    @media (min-width: $tablet) { width: 33.3%; }
+    @media (min-width: $tablet-min) { width: 33.3%; }
 
     @media screen and (orientation: landscape) {
         top: 1rem;
@@ -59,12 +49,12 @@ body {
         font-family: sans-serif;
         color: $dark;
 
-        @media screen and (min-width: $mobile-md) and (orientation: portrait) { font-size: 0.7rem; }
-        @media screen and (min-width: $mobile-md) and (orientation: landscape) { font-size: 0.7rem; }
-        @media screen and (min-width: $tablet) and (orientation: portrait) { font-size: 0.33rem; }
-        @media screen and (min-width: $tablet) and (orientation: landscape) { font-size: 0.5rem; }
-        @media screen and (min-width: $screen-md) and (orientation: portrait) { font-size: 0.4rem; }
-        @media screen and (min-width: $screen-md) and (orientation: landscape) { font-size: 0.33rem; }
+        @media screen and (min-width: $mobile-md-min) and (orientation: portrait) { font-size: 0.7rem; }
+        @media screen and (min-width: $mobile-md-min) and (orientation: landscape) { font-size: 0.7rem; }
+        @media screen and (min-width: $tablet-min) and (orientation: portrait) { font-size: 0.33rem; }
+        @media screen and (min-width: $tablet-min) and (orientation: landscape) { font-size: 0.5rem; }
+        @media screen and (min-width: $screen-md-min) and (orientation: portrait) { font-size: 0.4rem; }
+        @media screen and (min-width: $screen-md-min) and (orientation: landscape) { font-size: 0.33rem; }
     }
 
     circle {
