@@ -10,9 +10,7 @@ module.exports = merge(common, {
         writeToDisk: true,
     },
     output: {
-        filename(chunkData) {
-            return chunkData.chunk.name === 'index' ? 'index.bundle.js' : '[name]/index.bundle.js'
-        }
+        filename: '[name].bundle.js',
     },
     plugins: [
         // NB: repeat this instantiation for all separate html files
@@ -23,10 +21,10 @@ module.exports = merge(common, {
             filename: 'index.html',
         }),
         new HtmlWebpackPlugin({
-            template: './src/page-singer-songwriter/index.html',
+            template: './src/page-singer-songwriter/singer-songwriter.html',
             inject: true,
             chunks: ['singer-songwriter'],
-            filename: 'singer-songwriter/index.html',
+            filename: 'singer-songwriter.html',
         }),
     ],
     module: {
@@ -39,12 +37,6 @@ module.exports = merge(common, {
                     'sass-loader',
                 ]
             },
-            {
-                test: /\.(jpg|jpeg|png)$/,
-                use: [
-                    'file-loader',
-                ]
-            }
         ]
     }
 })
