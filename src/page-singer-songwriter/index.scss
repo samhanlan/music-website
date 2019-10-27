@@ -11,6 +11,8 @@ body {
 
 html {
     font-size: 62.5%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -74,6 +76,10 @@ body {
     width: 10.5rem;
 }
 
+.header-subtitle-release-date {
+    text-align: right;
+}
+
 .content-wrap {
     padding: 0 2.4rem;
     height: calc(100% - 128px);
@@ -89,7 +95,7 @@ body {
     display: block;
     overflow: hidden;
     height: 0;
-    background-image: url(assets/SS_share_relief_cover.jpg);
+    background-image: url(assets/SS_sharp_relief_cover.jpg);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 150%;
@@ -103,12 +109,91 @@ body {
 
 .section {
     display: block;
-    margin-top: 2rem;
+    margin-top: 3rem;
 
     h3 {
         font-weight: normal;
         margin-bottom: 1rem;
     }
+}
+
+.release-date {
+    margin-bottom: 1rem;
+}
+
+.release-title-sharp-relief {
+    width: 10.5rem;
+    margin: 1rem 0;
+}
+
+.release-info-wrap {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.lyrics-reveal-btn {
+    display: inline-block;
+    overflow: hidden;
+    height: 0;
+    background: url(assets/SS_scroll_here.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 1.5rem 2rem;
+    padding-top: 1.5rem;
+    width: 1.5rem;
+    transform: rotate(180deg);
+    margin-left: 1rem;
+}
+
+.lyrics {
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+.lyrics-checkbox:checked + .lyrics {
+    height: auto;
+}
+
+.elipses {
+    vertical-align: super;
+}
+
+.release-cover {
+    width: 100%;
+    flex: 0 1 auto;
+    order: 1;
+    margin-bottom: 2rem;
+
+    @media screen and (min-width: $mobile-md) and (min-height: $mobile-md) {
+        width: 33.3%;
+        order: 2;
+        margin-bottom: 0;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+.track-list {
+    padding-left: 1.8rem;
+    order: 2;
+
+    @media screen and (min-width: $mobile-md) and (min-height: $mobile-md) {
+        width: 66.6%;
+        order: 1;
+    }
+
+    li {
+        line-height: 1.5;
+    }
+}
+
+.live-show-date {
+    margin-right: 2rem;
 }
 
 .social-icon {
@@ -140,6 +225,10 @@ body {
     fill: $text;
     width: 1rem;
     vertical-align: middle;
+}
+
+.content-copyright {
+    text-align: center;
 }
 
 .scroll-here-wrap {
