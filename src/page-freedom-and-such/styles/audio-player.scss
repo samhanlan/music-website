@@ -9,7 +9,7 @@
     background-repeat: no-repeat;
     background-image: url(assets/FAS_audio_container@1x.jpg);
 
-    @media screen and (min-width: $tablet) {
+    @media screen and (min-width: $mobile-md) {
         background-image: url(assets/FAS_audio_container@2x.jpg);
     }
 }
