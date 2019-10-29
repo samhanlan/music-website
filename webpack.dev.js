@@ -26,6 +26,12 @@ module.exports = merge(common, {
             chunks: ['singer-songwriter'],
             filename: 'singer-songwriter.html',
         }),
+        new HtmlWebpackPlugin({
+            template: './src/page-freedom-and-such/freedom-and-such.html',
+            inject: true,
+            chunks: ['freedom-and-such'],
+            filename: 'freedom-and-such.html',
+        }),
     ],
     module: {
         rules: [

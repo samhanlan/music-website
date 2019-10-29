@@ -36,33 +36,22 @@ module.exports = merge(common, {
                 collapseWhitespace: true,
             }
         }),
+        new HtmlWebpackPlugin({
+            template: './src/page-freedom-and-such/freedom-and-such.html',
+            inject: true,
+            chunks: ['freedom-and-such'],
+            filename: 'freedom-and-such.html',
+            minify: {
+                removeAttributeQuotes: true,
+                collapseWhitespace: true,
+            }
+        }),
         new HTMLInlineCSSWebpackPlugin(),
     ],
     optimization: {
         minimizer: [
             new OptimizeCssAssetsPlugin(),
             new TerserPlugin(),
-            // NB: repeat this instantiation for all separate html files
-            // new HtmlWebpackPlugin({
-            //     template: './src/page-index/index.html',
-            //     inject: true,
-            //     chunks: ['index'],
-            //     filename: 'index.html',
-            //     minify: {
-            //         removeAttributeQuotes: true,
-            //         collapseWhitespace: true,
-            //     }
-            // }),
-            // new HtmlWebpackPlugin({
-            //     template: './src/page-singer-songwriter/singer-songwriter.html',
-            //     inject: true,
-            //     chunks: ['singer-songwriter'],
-            //     filename: 'singer-songwriter.html',
-            //     minify: {
-            //         removeAttributeQuotes: true,
-            //         collapseWhitespace: true,
-            //     }
-            // }),
         ]
     },
     module: {

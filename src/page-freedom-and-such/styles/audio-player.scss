@@ -1,0 +1,60 @@
+#trailer-custom-audio-player {
+    width: 100%;
+    min-width: 280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3% 1.5% 4.5%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url(assets/FAS_audio_container@1x.jpg);
+
+    @media screen and (min-width: $tablet) {
+        background-image: url(assets/FAS_audio_container@2x.jpg);
+    }
+}
+
+.audio-transport-control {
+    display: flex;
+    width: 5%;
+}
+
+.audio-play-button {
+    width: 100%;
+    height: 100%;
+
+    circle {
+        fill: none;
+        stroke: $light;
+    }
+    polygon {
+        fill: $light;
+    }
+
+    .show-pause-btn & {
+        display: none;
+    }
+}
+
+.audio-pause-button {
+    width: 100%;
+    fill: $light;
+
+    .show-play-btn & {
+        display: none;
+    }
+}
+
+.audio-timeline {
+    width: 100%;
+    height: 4px;
+    background-color: rgba(254, 253, 248, 0.33);
+}
+
+.audio-progress {
+    width: 0%;
+    height: 100%;
+    display: block;
+    border-right: 4px solid $light;
+    background-color: rgba(142, 207, 165, 0.5);
+}
