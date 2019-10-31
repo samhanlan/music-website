@@ -10,6 +10,10 @@ html {
     @media screen and (min-width: $tablet-min) and (orientation: portrait) { font-size: 42px; }
     @media screen and (min-width: $tablet-min) and (orientation: landscape) { font-size: 28px; }
     @media screen and (min-width: $screen-md-min) and (orientation: landscape) { font-size: 42px; }
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
