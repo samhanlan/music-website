@@ -200,6 +200,25 @@ body {
     flex-wrap: wrap;
 }
 
+.track-list {
+    padding-left: 1em;
+    order: 2;
+
+    @media screen and (min-width: $mobile-md) and (min-height: $mobile-md) {
+        width: 66.6%;
+        order: 1;
+    }
+
+    li {
+        line-height: 2;
+        white-space: nowrap;
+        
+        label {
+            cursor: pointer;
+        }
+    }
+}
+
 .lyrics-reveal-btn {
     vertical-align: middle;
     display: inline-block;
@@ -208,6 +227,7 @@ body {
     width: 25px;
     background-position: -314px 0;
     transform: rotate(180deg) scale(0.66);
+    transition: transform .4s ease-in-out;
 }
 
 .lyrics {
@@ -219,8 +239,11 @@ body {
 }
 
 .lyrics-checkbox:checked {
-    & + .lyrics {
+    & ~ .lyrics {
         height: auto;
+    }
+    & ~ label .lyrics-reveal-btn {
+        transform: rotate(0) scale(0.66);
     }
 }
 
@@ -272,21 +295,6 @@ body {
     @media screen and (min-width: $screen-md) and (-webkit-min-device-pixel-ratio: 2),
         screen and (min-width: $screen-md) and (min-resolution: 192dpi) {
         background-image: url(assets/SH_SS_sharp_relief_cover_lg@2x.jpg);
-    }
-}
-
-.track-list {
-    padding-left: 1em;
-    order: 2;
-
-    @media screen and (min-width: $mobile-md) and (min-height: $mobile-md) {
-        width: 66.6%;
-        order: 1;
-    }
-
-    li {
-        line-height: 2;
-        white-space: nowrap;
     }
 }
 
