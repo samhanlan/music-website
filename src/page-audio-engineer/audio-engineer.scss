@@ -23,15 +23,68 @@ p {
     font-size: 1.6rem;
     font-weight: lighter;
     line-height: 1.6;
+    margin-bottom: 16px;
+
+    .credits & {
+        margin-bottom: 0;
+        font-size: 1.4rem;
+        font-weight: normal;
+    }
 }
 
-h1 { font-size: 2.4rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.8rem; }
-h4 { font-size: 1.4rem; }
+h1 {
+    font-size: 2.4rem;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: $border;
+}
 
-a {
-    color: black;
+h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+
+    .credits & {
+        margin-bottom: 0;
+
+        span {
+            font-size: 0.75em;
+        }
+    }
+    .artist-profile & {
+        margin-bottom: 24px;   
+    }
+}
+
+h3 {
+    font-size: 1.8rem;
+
+    .contact & {
+        font-weight: lighter;
+        margin-bottom: 32px;
+    }
+}
+
+h4 {
+    font-size: 1.4rem;
+}
+
+article {
+    display: block;
+    margin-bottom: 48px;
+}
+
+img {
+    width: 100%;
+
+    .contact & {
+        margin-top: 48px;
+    }
+}
+
+iframe {
+    .credits & {
+        margin-top: 16px;
+    }
 }
 
 .grid-container {
@@ -46,7 +99,7 @@ a {
         #content-display {
             grid-column: span 2;
         }
-        #portfolio-list {
+        #sidebar {
             grid-column: span 2;
         }
     }
@@ -57,7 +110,7 @@ a {
             order: 4;
             grid-column: span 1;
         }
-        #portfolio-list {
+        #sidebar {
             order: 3;
             grid-column: span 1;
         }
@@ -89,38 +142,66 @@ a {
 nav {
     order: 2;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: stretch;
     border-bottom: $border;
     
     @media screen and (min-width: $mobile-md) {
+        flex-wrap: wrap;
         justify-content: flex-end;
         align-items: flex-end;
         border-left: $border;
     }
 
     a {
-        font-size: 1.4rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 16px 8px;
+
+        font-size: 1.6rem;
+        color: $dark;
+        text-align: center;
+        padding: 16px 0;
+        flex: auto;
         
+        @media screen and (min-width: $mobile-md) {
+            flex: 0 1;
+            padding: 16px;
+        }
         @media screen and (min-width: $tablet) {
             padding: 32px 24px 16px;
-            
         }
 
-        &:hover {
+        &:hover,
+        &.active {
             background-image: url(./assets/nav.jpg);
             color: $light;
         }
     }
 }
 
-#portfolio-list {
+#sidebar {
     order: 4;
+    display: flex;
+}
+
+#sidebar-background {
+    flex: 1;
+    background-size: contain;
+    
+    .home & { display: none; }
+
+    @media screen and (min-width: $tablet) {
+        .about & { background-image: url(./assets/sbr_alt1.jpg) }
+        .latest & { background-image: url(./assets/sbr_alt2.jpg) }
+        .credits & { background-image: url(./assets/sbr_alt3.jpg) }
+        .contact & { background-image: url(./assets/sbr_alt4.jpg) }
+    }
+}
+
+#portfolio-list {
+    flex: 1;
+    display: none;
+
+    .home & { display: block }
+    .hastouchevents & { overflow: hidden }
 }
 
 .portfolio-item {
@@ -129,6 +210,13 @@ nav {
     display: flex;
     align-items: center;
     cursor: pointer;
+
+    .portfolio-artwork {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 0.5s left ease, 0.5s width ease;
+    }
 
     &:hover {
         .portfolio-artwork {
@@ -147,33 +235,46 @@ nav {
     transition: 0.2s transform ease;
 }
 
+
 .portfolio-artwork {
-    height: 100%;
+    display: block;
+    height: 48px;
     width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: 0.5s left ease, 0.5s width ease;
 
     &::after {
         content: '';
         display: block;
         height: 100%;
         background-size: auto;
-        background-position: center;
+        background-position-x: center;
         background-repeat: no-repeat;
+        background-image: url(./assets/portfolio-slices.jpg);
+    
+    }
 
-        #portfolio-item-CAL & { background-image: url(./assets/sbr_CAL.jpg); }
-        #portfolio-item-OT  & { background-image: url(./assets/sbr_OT.jpg); }
-        #portfolio-item-3PS & { background-image: url(./assets/sbr_3PS.jpg); }
-        #portfolio-item-CPA & { background-image: url(./assets/sbr_CPA.jpg); }
-        #portfolio-item-BS  & { background-image: url(./assets/sbr_BS.jpg); }
-        #portfolio-item-GF  & { background-image: url(./assets/sbr_GF.jpg); }
-        #portfolio-item-DL  & { background-image: url(./assets/sbr_DL.jpg); }
-        #portfolio-item-CPE & { background-image: url(./assets/sbr_CPE.jpg); }
-        #portfolio-item-FAS & { background-image: url(./assets/sbr_FAS.jpg); }
+    .credits & {
+        margin-bottom: 32px;
     }
 }
+
+.artwork-AVP::after  { background-position-y: 0px }
+.artwork-BC::after   { background-position-y: -48px }
+.artwork-BS::after   { background-position-y: -96px }
+.artwork-BSS::after  { background-position-y: -144px }
+.artwork-CAL::after  { background-position-y: -192px }
+.artwork-CPA::after  { background-position-y: -240px }
+.artwork-CPE::after  { background-position-y: -288px }
+.artwork-DL::after   { background-position-y: -336px }
+.artwork-DTS2::after { background-position-y: -384px }
+.artwork-DTS1::after { background-position-y: -432px }
+.artwork-FAS::after  { background-position-y: -480px }
+.artwork-GF::after   { background-position-y: -528px }
+.artwork-NAN::after  { background-position-y: -576px }
+.artwork-OIP::after  { background-position-y: -624px }
+.artwork-OT::after   { background-position-y: -672px }
+.artwork-REC::after  { background-position-y: -720px }
+.artwork-SS::after   { background-position-y: -768px }
+.artwork-3PS::after  { background-position-y: -816px }
 
 #content-display {
     order: 3;
@@ -183,30 +284,37 @@ nav {
         border-left: $border;
         padding: 24px;
     }
-    
     @media screen and (min-width: $screen-md) { padding: 48px; }
     @media screen and (min-width: $screen-lg) { padding: 96px; }
 
-    &:not(.display-default-content) {
+    .home & {
         display: flex;
         flex-wrap: wrap;
     }
+}
 
+.home-default-content {
     h1 {
         display: inline-block;
-        padding-bottom: 12px;
-        border-bottom: 3px solid $dark;
-        margin-bottom: 12px;
     }
-
     h2 {
-        margin-bottom: 32px;
+        margin-bottom: 48px;
+    }
+    h3 {
+        display: inline-block;
+        border-bottom: 2px solid $dark;
+        padding-bottom: 4px;
+        margin-bottom: 4px;
+    }
+    h4 {
+        font-weight: normal;
     }
 }
 
 .album-embed {
-    flex: 1 auto;
+    flex: 1;
     margin-bottom: 32px;
+    min-width: 272px;
 
     @media screen and (min-width: $mobile-md) {
         margin-right: 24px;
@@ -218,17 +326,9 @@ nav {
 }
 
 .artist-profile {
-    flex: 2;
+    flex: 2 160px;
 }
 
-.default-content- {
-    &tertiary {
-        display: inline-block;
-        border-bottom: 2px solid $dark;
-        padding-bottom: 4px;
-        margin-bottom: 4px;
-    }
-    &fourth {
-        font-weight: normal;
-    }
+.at-sign {
+    width: 1em;
 }
