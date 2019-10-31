@@ -1,0 +1,234 @@
+@import "../styles/normalise";
+@import "../styles/viewports";
+
+$dark: black;
+$light: white;
+$border: 4px solid $dark;
+
+html {
+    font-size: 62.5%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: $light;
+    color: $dark;
+}
+
+p {
+    font-size: 1.6rem;
+    font-weight: lighter;
+    line-height: 1.6;
+}
+
+h1 { font-size: 2.4rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.8rem; }
+h4 { font-size: 1.4rem; }
+
+a {
+    color: black;
+}
+
+.grid-container {
+    display: grid;
+    width: 100%;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+
+    @media screen and (min-width: $mobile-md) {
+        grid-template-columns: 1fr 2fr;
+
+        #content-display {
+            grid-column: span 2;
+        }
+        #portfolio-list {
+            grid-column: span 2;
+        }
+    }
+    @media screen and (min-width: $tablet) {
+        grid-template-columns: 1fr 2fr;
+
+        #content-display {
+            order: 4;
+            grid-column: span 1;
+        }
+        #portfolio-list {
+            order: 3;
+            grid-column: span 1;
+        }
+    }
+    @media screen and (min-width: $screen-md) {
+        grid-template-columns: 1fr 3fr;
+        width: $screen-md;
+    }
+}
+
+.logo-wrap {
+    order: 1;
+    padding: 32px;
+    border-bottom: $border;
+    
+    @media screen and (min-width: $mobile-md) {
+        padding: 32px 16px 16px 16px;
+    }
+}
+
+.logo {
+    display: block;
+    background-image: url(./assets/SH_logo.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding-top: 70%;
+}
+
+nav {
+    order: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+    border-bottom: $border;
+    
+    @media screen and (min-width: $mobile-md) {
+        justify-content: flex-end;
+        align-items: flex-end;
+        border-left: $border;
+    }
+
+    a {
+        font-size: 1.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 8px;
+        
+        @media screen and (min-width: $tablet) {
+            padding: 32px 24px 16px;
+            
+        }
+
+        &:hover {
+            background-image: url(./assets/nav.jpg);
+            color: $light;
+        }
+    }
+}
+
+#portfolio-list {
+    order: 4;
+}
+
+.portfolio-item {
+    height: 48px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+        .portfolio-artwork {
+            left: 100%;
+            width: 300%;
+        }
+        .portfolio-title {
+            transform: translateX(8px);
+        }
+    }
+}
+
+.portfolio-title {
+    font-size: 1.4rem;
+    margin: 0 8px;
+    transition: 0.2s transform ease;
+}
+
+.portfolio-artwork {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s left ease, 0.5s width ease;
+
+    &::after {
+        content: '';
+        display: block;
+        height: 100%;
+        background-size: auto;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        #portfolio-item-CAL & { background-image: url(./assets/sbr_CAL.jpg); }
+        #portfolio-item-OT  & { background-image: url(./assets/sbr_OT.jpg); }
+        #portfolio-item-3PS & { background-image: url(./assets/sbr_3PS.jpg); }
+        #portfolio-item-CPA & { background-image: url(./assets/sbr_CPA.jpg); }
+        #portfolio-item-BS  & { background-image: url(./assets/sbr_BS.jpg); }
+        #portfolio-item-GF  & { background-image: url(./assets/sbr_GF.jpg); }
+        #portfolio-item-DL  & { background-image: url(./assets/sbr_DL.jpg); }
+        #portfolio-item-CPE & { background-image: url(./assets/sbr_CPE.jpg); }
+        #portfolio-item-FAS & { background-image: url(./assets/sbr_FAS.jpg); }
+    }
+}
+
+#content-display {
+    order: 3;
+    padding: 32px 16px;
+
+    @media screen and (min-width: $tablet) {
+        border-left: $border;
+        padding: 24px;
+    }
+    
+    @media screen and (min-width: $screen-md) { padding: 48px; }
+    @media screen and (min-width: $screen-lg) { padding: 96px; }
+
+    &:not(.display-default-content) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    h1 {
+        display: inline-block;
+        padding-bottom: 12px;
+        border-bottom: 3px solid $dark;
+        margin-bottom: 12px;
+    }
+
+    h2 {
+        margin-bottom: 32px;
+    }
+}
+
+.album-embed {
+    flex: 1 auto;
+    margin-bottom: 32px;
+
+    @media screen and (min-width: $mobile-md) {
+        margin-right: 24px;
+    }
+}
+
+.iframe-large-wrap {
+    max-width: $tablet;
+}
+
+.artist-profile {
+    flex: 2;
+}
+
+.default-content- {
+    &tertiary {
+        display: inline-block;
+        border-bottom: 2px solid $dark;
+        padding-bottom: 4px;
+        margin-bottom: 4px;
+    }
+    &fourth {
+        font-weight: normal;
+    }
+}
