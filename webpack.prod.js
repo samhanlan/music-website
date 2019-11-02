@@ -4,49 +4,38 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
-const HTMLInlineCSSWebpackPlugin = require("html-inline-css-webpack-plugin").default
+const HTMLInlineCSSWebpackPlugin = require('html-inline-css-webpack-plugin').default
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
+
+const getHtmlPluginConfig = name => ({
+    template: `./src/page-${name}/${name}.html`,
+    inject: true,
+    inlineSource: '.js$',
+    chunks: [name],
+    filename: `${name}.html`,
+    minify: {
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+    }
+})
 
 module.exports = merge(common, {
     mode: 'production',
     output: {
         filename: '[name].bundle.js',
+        publicPath: 'http://samhanlan.com/',
     },
     plugins: [
         new MiniCssExtractPlugin({
             filename: '[name].[contentHash].css',
             chunkFilename: '[name].css',
         }),
-        new HtmlWebpackPlugin({
-            template: './src/page-index/index.html',
-            inject: true,
-            chunks: ['index'],
-            filename: 'index.html',
-            minify: {
-                removeAttributeQuotes: true,
-                collapseWhitespace: true,
-            }
-        }),
-        new HtmlWebpackPlugin({
-            template: './src/page-singer-songwriter/singer-songwriter.html',
-            inject: true,
-            chunks: ['singer-songwriter'],
-            filename: 'singer-songwriter.html',
-            minify: {
-                removeAttributeQuotes: true,
-                collapseWhitespace: true,
-            }
-        }),
-        new HtmlWebpackPlugin({
-            template: './src/page-freedom-and-such/freedom-and-such.html',
-            inject: true,
-            chunks: ['freedom-and-such'],
-            filename: 'freedom-and-such.html',
-            minify: {
-                removeAttributeQuotes: true,
-                collapseWhitespace: true,
-            }
-        }),
+        new HtmlWebpackPlugin(getHtmlPluginConfig('index')),
+        new HtmlWebpackPlugin(getHtmlPluginConfig('singer-songwriter')),
+        new HtmlWebpackPlugin(getHtmlPluginConfig('freedom-and-such')),
+        new HtmlWebpackPlugin(getHtmlPluginConfig('audio-engineer')),
         new HTMLInlineCSSWebpackPlugin(),
+        new HtmlWebpackInlineSourcePlugin(),
     ],
     optimization: {
         minimizer: [
@@ -63,7 +52,18 @@ module.exports = merge(common, {
                     'css-loader',
                     'sass-loader',
                 ]
-            }
+            },
+            {
+                test: /\.js$/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env']
+                        }
+                    }
+                ]
+            },
         ]
     }
 })

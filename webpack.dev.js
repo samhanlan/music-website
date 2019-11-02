@@ -1,3 +1,4 @@
+const path = require('path')
 const merge = require('webpack-merge')
 const common = require('./webpack.common')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -8,9 +9,24 @@ module.exports = merge(common, {
         hot: false,
         inline: false,
         writeToDisk: true,
+        before: function(app, server, compiler) {
+            app.get('/', function(req, res) {
+                res.sendFile(path.join(__dirname, 'dist/index.html'))
+            })
+            app.get('/singer-songwriter', function(req, res) {
+                res.sendFile(path.join(__dirname, 'dist/singer-songwriter.html'))
+            })
+            app.get('/audio-engineer', function(req, res) {
+                res.sendFile(path.join(__dirname, 'dist/audio-engineer.html'))
+            })
+            app.get('/freedom-and-such', function(req, res) {
+                res.sendFile(path.join(__dirname, 'dist/freedom-and-such.html'))
+            })
+        }
     },
     output: {
         filename: '[name].bundle.js',
+        publicPath: 'http://localhost:8080/',
     },
     plugins: [
         // NB: repeat this instantiation for all separate html files

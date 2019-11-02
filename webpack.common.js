@@ -1,7 +1,6 @@
 const { resolve } = require('path')
 const BUILD_PATH = resolve(__dirname, 'dist')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
     entry: {
@@ -17,22 +16,22 @@ module.exports = {
         rules: [
             {
                 test: /\.html$/,
-                use: [
-                    'html-loader',
-                ]
+                use: {
+                    loader: 'html-loader',
+                    options: {
+                        attrs: ['link:href'],
+                    }
+                },
             },
             {
-                test: /\.(jpg|jpeg|png|webp|gif|mp3)$/,
+                test: /\.(jpg|jpeg|png|gif|ico|mp3)$/,
                 use: [
                     'file-loader',
-                ]   
+                ],
             },
         ]
     },
     plugins: [
-        new CopyPlugin([
-            { from: './src/favicon.ico', to: 'favicon.ico' },
-        ]),
         new CleanWebpackPlugin()
     ]
 }

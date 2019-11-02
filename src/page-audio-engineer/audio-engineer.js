@@ -20,9 +20,7 @@ function onFirstTouch() {
 
 function applyRouteViaCurrentHash() {
     const hash = getCurrentRouteFromHash()
-    const route = routes.find(route => hash === route)
-    
-    if (!route) return
+    const route = routes.find(route => hash === route) || 'home'    
 
     applyTemplateViaRoute(route)
     applyActiveNavLinkElViaRoute(route)

@@ -133,10 +133,14 @@ iframe {
 
 .logo {
     display: block;
-    background-image: url(./assets/SH_logo.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
     padding-top: 70%;
+    background-image: url(../assets/SH_logo@1x.jpg);
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url(../assets/SH_logo@2x.jpg);
+    }
 }
 
 nav {
@@ -171,7 +175,7 @@ nav {
 
         &:hover,
         &.active {
-            background-image: url(./assets/nav.jpg);
+            background-image: url(assets/nav.jpg);
             color: $light;
         }
     }
@@ -189,10 +193,10 @@ nav {
     .home & { display: none; }
 
     @media screen and (min-width: $tablet) {
-        .about & { background-image: url(./assets/sbr_alt1.jpg) }
-        .latest & { background-image: url(./assets/sbr_alt2.jpg) }
-        .credits & { background-image: url(./assets/sbr_alt3.jpg) }
-        .contact & { background-image: url(./assets/sbr_alt4.jpg) }
+        .about & { background-image: url(assets/sbr_alt1.jpg) }
+        .latest & { background-image: url(assets/sbr_alt2.jpg) }
+        .credits & { background-image: url(assets/sbr_alt3.jpg) }
+        .contact & { background-image: url(assets/sbr_alt4.jpg) }
     }
 }
 
@@ -242,13 +246,13 @@ nav {
     width: 100%;
 
     &::after {
-        content: '';
+        content: ' ';
         display: block;
         height: 100%;
         background-size: auto;
         background-position-x: center;
         background-repeat: no-repeat;
-        background-image: url(./assets/portfolio-slices.jpg);
+        background-image: url(assets/portfolio-slices.jpg);
     
     }
 
