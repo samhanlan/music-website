@@ -44,9 +44,9 @@ img {
 
 .return-home-btn {
     width: 2.5rem;
-    position: absolute;
-    top: 5rem;
-    right: 5rem;
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
 
     &::after {
         background-position: -15px 0px;
