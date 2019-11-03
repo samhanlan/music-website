@@ -12,7 +12,7 @@ const getHtmlPluginConfig = name => ({
     inject: true,
     inlineSource: '.js$',
     chunks: [name],
-    filename: `${name}.html`,
+    filename: name === 'index' ? 'index.html' : `${name}/${name}.html`,
     minify: {
         removeAttributeQuotes: true,
         collapseWhitespace: true,
@@ -22,13 +22,11 @@ const getHtmlPluginConfig = name => ({
 module.exports = merge(common, {
     mode: 'production',
     output: {
-        filename: '[name].bundle.js',
         publicPath: 'http://samhanlan.com/',
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: '[name].[contentHash].css',
-            chunkFilename: '[name].css',
+            moduleFilename: ({ name }) => name === 'index' ? 'index.[contentHash].css' : `${name}/${name}.[contentHash].css`,
         }),
         new HtmlWebpackPlugin(getHtmlPluginConfig('index')),
         new HtmlWebpackPlugin(getHtmlPluginConfig('singer-songwriter')),

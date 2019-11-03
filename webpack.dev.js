@@ -3,57 +3,23 @@ const merge = require('webpack-merge')
 const common = require('./webpack.common')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const getHtmlPluginConfig = name => ({
+    template: `./src/page-${name}/${name}.html`,
+    inject: true,
+    chunks: [name],
+    filename: name === 'index' ? 'index.html' : `${name}/${name}.html`,
+})
+
 module.exports = merge(common, {
     mode: 'development',
-    devServer: {
-        hot: false,
-        inline: false,
-        writeToDisk: true,
-        before: function(app, server, compiler) {
-            app.get('/', function(req, res) {
-                res.sendFile(path.join(__dirname, 'dist/index.html'))
-            })
-            app.get('/singer-songwriter', function(req, res) {
-                res.sendFile(path.join(__dirname, 'dist/singer-songwriter.html'))
-            })
-            app.get('/audio-engineer', function(req, res) {
-                res.sendFile(path.join(__dirname, 'dist/audio-engineer.html'))
-            })
-            app.get('/freedom-and-such', function(req, res) {
-                res.sendFile(path.join(__dirname, 'dist/freedom-and-such.html'))
-            })
-        }
-    },
     output: {
-        filename: '[name].bundle.js',
         publicPath: 'http://localhost:8080/',
     },
     plugins: [
-        // NB: repeat this instantiation for all separate html files
-        new HtmlWebpackPlugin({
-            template: './src/page-index/index.html',
-            inject: true,
-            chunks: ['index'],
-            filename: 'index.html',
-        }),
-        new HtmlWebpackPlugin({
-            template: './src/page-singer-songwriter/singer-songwriter.html',
-            inject: true,
-            chunks: ['singer-songwriter'],
-            filename: 'singer-songwriter.html',
-        }),
-        new HtmlWebpackPlugin({
-            template: './src/page-freedom-and-such/freedom-and-such.html',
-            inject: true,
-            chunks: ['freedom-and-such'],
-            filename: 'freedom-and-such.html',
-        }),
-        new HtmlWebpackPlugin({
-            template: './src/page-audio-engineer/audio-engineer.html',
-            inject: true,
-            chunks: ['audio-engineer'],
-            filename: 'audio-engineer.html',
-        }),
+        new HtmlWebpackPlugin(getHtmlPluginConfig('index')),
+        new HtmlWebpackPlugin(getHtmlPluginConfig('singer-songwriter')),
+        new HtmlWebpackPlugin(getHtmlPluginConfig('freedom-and-such')),
+        new HtmlWebpackPlugin(getHtmlPluginConfig('audio-engineer')),
     ],
     module: {
         rules: [
@@ -66,5 +32,24 @@ module.exports = merge(common, {
                 ]
             },
         ]
-    }
+    },
+    devServer: {
+        hot: false,
+        inline: false,
+        writeToDisk: true,
+        before: function(app, server, compiler) {
+            app.get('/', function(req, res) {
+                res.sendFile(path.join(__dirname, 'dist/index.html'))
+            })
+            app.get('/singer-songwriter', function(req, res) {
+                res.sendFile(path.join(__dirname, 'dist/singer-songwriter/singer-songwriter.html'))
+            })
+            app.get('/audio-engineer', function(req, res) {
+                res.sendFile(path.join(__dirname, 'dist/audio-engineer/audio-engineer.html'))
+            })
+            app.get('/freedom-and-such', function(req, res) {
+                res.sendFile(path.join(__dirname, 'dist/freedom-and-such/freedom-and-such.html'))
+            })
+        }
+    },
 })

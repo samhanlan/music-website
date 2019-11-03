@@ -11,6 +11,7 @@ module.exports = {
     },
     output: {
         path: BUILD_PATH,
+        filename: chunkData => chunkData.chunk.name === 'index' ? '[name].js' : '[name]/[name].js',
     },
     module: {
         rules: [
@@ -19,7 +20,7 @@ module.exports = {
                 use: {
                     loader: 'html-loader',
                     options: {
-                        attrs: ['link:href'],
+                        attrs: ['link:href', 'img:src', 'image:href'],
                     }
                 },
             },
