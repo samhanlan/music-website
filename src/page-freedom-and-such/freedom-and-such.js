@@ -4,7 +4,7 @@ import audioFile from './assets/trailer.mp3';
 const trailerPlayer = document.getElementById('trailer-custom-audio-player');
 const transportBtn = trailerPlayer.querySelector('.audio-transport-control');
 const progressBar = trailerPlayer.querySelector('.audio-progress');
-const audio = new Audio(audioFile);
+const audio = document.getElementById('audio-native-player');
 let onPlaybackElapse;
 let willPlay = false;
 
