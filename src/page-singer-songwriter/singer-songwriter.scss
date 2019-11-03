@@ -34,12 +34,16 @@ body {
 .sharp-relief-text,
 .scroll-here,
 .lyrics-reveal-btn {
-    background-image: url(assets/SH_SS_sprite1@1x.jpg);
-    background-repeat: no-repeat;
-    background-size: 339px;
-    
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        background-image: url(assets/SH_SS_sprite1@2x.jpg);
+    &::after {
+        content: ' ';
+        display: block;
+        background-image: url(assets/SH_SS_sprite1@1x.jpg);
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            background-image: url(assets/SH_SS_sprite1@2x.jpg);
+        }
     }
 }
 
@@ -67,9 +71,12 @@ body {
 
 .header-title-sam-hanlan {
     width: 105px;
-    height: 34px;
-    background-position: 0 0;
     margin: 2.4rem 0 0 2.4rem;
+
+    &::after {
+        background-position: 0 0;
+        padding-top: 34.2%;
+    }
 }
 
 .header-lower {
@@ -79,9 +86,17 @@ body {
 }
 
 .header-rocks {
+    display: none;
     width: 105px;
-    height: 35px;
-    background-position: -105px 0;
+    
+    @media screen and (min-width: $mobile-md) {
+        display: block;
+    }
+    
+    &::after {
+        padding-top: 35%;
+        background-position: 45% 0;
+    }
 }
 
 .header-subtitle {
@@ -95,10 +110,14 @@ body {
 }
 
 .sharp-relief-text {
-    width: 105px;
-    height: 21px;
-    background-position: -210px 0;
     display: block;
+    width: 105px;
+
+    &::after {
+        padding-top: 22%;
+        background-position: 90% 0;
+        background-size: auto 154%;
+    }
 }
 
 .header-subtitle-release-date {
@@ -224,11 +243,15 @@ body {
     vertical-align: middle;
     display: inline-block;
     overflow: hidden;
-    height: 25px;
     width: 25px;
-    background-position: -314px 0;
     transform: rotate(180deg) scale(0.66);
     transition: transform .4s ease-in-out;
+
+    &::after {
+        padding-top: 100%;
+        background-position: 100% 0;
+        background-size: auto 145%;
+    }
 }
 
 .lyrics {
