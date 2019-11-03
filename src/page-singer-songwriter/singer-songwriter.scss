@@ -380,8 +380,12 @@ body {
     top: 1.6rem;
     right: 1.6rem;
     width: 24px;
-    height: 33px;
-    background-position: -314px 0;
+    
+    &::after {
+        padding-top: 130%;
+        background-position: 100% 0;
+        background-size: auto 110%;
+    }
 }
 
 .footer-rocks {
