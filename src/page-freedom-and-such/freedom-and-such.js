@@ -1,21 +1,27 @@
 import './freedom-and-such.scss';
 import audioFile from './assets/trailer.mp3';
 
+const audio = document.getElementById('audio-native-player');
 const trailerPlayer = document.getElementById('trailer-custom-audio-player');
 const transportBtn = trailerPlayer.querySelector('.audio-transport-control');
 const progressBar = trailerPlayer.querySelector('.audio-progress');
-const audio = document.getElementById('audio-native-player');
+const trailerArrow = document.querySelector('.section-trailer .arrow');
+const trailerLabel = document.querySelector('.trailer-description-wrap');
 let onPlaybackElapse;
 let willPlay = false;
 
 audio.addEventListener('canplay', () => {
-    transportBtn.addEventListener('click', () => {
-        willPlay = !willPlay;
-        
-        if (willPlay) play();
-        else pause();
-    })
+    transportBtn.addEventListener('click', transportHandler);
+    trailerArrow.addEventListener('click', transportHandler);
+    trailerLabel.addEventListener('click', transportHandler);
 })
+
+function transportHandler() {
+    willPlay = !willPlay;
+        
+    if (willPlay) play();
+    else pause();
+}
 
 function play() {
     audio.play();
