@@ -22,7 +22,7 @@ body {
 }
 
 #logo {
-    width: 50%;
+    width: 33.3%;
     max-width: 33.3vh;
     position: fixed;
     top: 45%;
@@ -46,6 +46,10 @@ body {
     @media screen and (orientation: landscape) {
         top: 12.5vh;
         transform: translate(-50%, 0);
+    }
+
+    @media screen and (min-width: $mobile-md) {
+        width: 50%;
     }
 }
 
