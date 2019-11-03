@@ -59,10 +59,12 @@ main {
     max-width: $screen-md;
     margin: 0 auto;
     background-repeat: repeat-y;
-    background-size: 100%;
+    background-position: center;
+    background-size: 125%;
     background-image: url(assets/FAS_bg@1x.jpg);
 
     @media screen and (min-width: $mobile-md) {
+        background-size: 100%;
         background-image: url(assets/FAS_bg@2x.jpg);
     }
 }
@@ -74,12 +76,14 @@ footer {
     &::after {
         content: ' ';
         display: block;
-        background-repeat: no-repeat;
-        background-size: 100%;
         padding-top: 47%;
+        background-repeat: no-repeat;
+        background-size: 125%;
+        background-position: center;
         background-image: url(assets/FAS_bg_top@1x.jpg);
 
         @media screen and (min-width: $mobile-md) {
+            background-size: 100%;
             background-image: url(assets/FAS_bg_top@2x.jpg);
         }
     }
@@ -89,8 +93,12 @@ footer {
     transform: scaleY(-1) translateX(-1px);
     
     &::after {
-        background-size: 99.9%;
         padding-top: 5rem;
+        background-position: top;       
+
+        @media screen and (min-width: $mobile-md) {
+            background-size: 99.9%;
+        }
     }
 }
 
