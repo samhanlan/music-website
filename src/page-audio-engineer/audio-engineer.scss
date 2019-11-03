@@ -104,8 +104,6 @@ iframe {
         }
     }
     @media screen and (min-width: $tablet) {
-        grid-template-columns: 1fr 2fr;
-
         #content-display {
             order: 4;
             grid-column: span 1;
@@ -335,4 +333,25 @@ nav {
 
 .at-sign {
     width: 1em;
+}
+
+footer {
+    order: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+
+    @media screen and (min-width: $mobile-md) {
+        grid-column: span 2;
+    }
+
+    small {
+        font-size: 1.2rem;
+    }
+}
+
+.return-home-btn {
+    flex: 0 1 4.5rem;
+    fill: $dark;
 }

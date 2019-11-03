@@ -12,6 +12,7 @@ portfolioListEl.addEventListener('click', onPortfolioItemSelect)
 window.addEventListener('touchstart', onFirstTouch, false)
 
 applyRouteViaCurrentHash()
+applyFooterContent()
 
 function onFirstTouch() {
     document.body.classList.add('hastouchevents')
@@ -67,4 +68,8 @@ function onPortfolioItemSelect(event) {
         contentDisplayEl.appendChild(content.documentFragment)
         lastPortfolioIdSelection = content.id
     }
+}
+
+function applyFooterContent() {
+    document.getElementById('copyright-year').innerHTML = new Date().getFullYear();
 }
