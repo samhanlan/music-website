@@ -66,12 +66,16 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
-    flex-flow: column;
+    margin-top: 24px;
+    
+    @media screen and (min-height: $mobile-md) and (min-width: $mobile-md) {
+        flex-flow: column;
+    }
 }
 
 .header-title-sam-hanlan {
-    width: 105px;
-    margin: 2.4rem 0 0 2.4rem;
+    width: 10.5rem;
+    margin-left: 24px;
 
     &::after {
         background-position: 0 0;
@@ -89,7 +93,7 @@ body {
     display: none;
     width: 105px;
     
-    @media screen and (min-width: $mobile-md) {
+    @media screen and (min-height: $mobile-md) and (min-width: $mobile-md) {
         display: block;
     }
     
@@ -125,7 +129,7 @@ body {
 }
 
 .content-wrap {
-    padding: 0 2.4rem;
+    padding: 0 24px;
     height: calc(100% - 128px);
     overflow-y: scroll;
     overflow-x: hidden;
@@ -133,7 +137,6 @@ body {
 
 .content-viewer {
     display: block;
-    padding-bottom: 160px;
 }
 
 .content-cover {
@@ -164,7 +167,7 @@ body {
 
 .section {
     display: block;
-    margin-top: 3rem;
+    margin-top: 30px;
 
     h3 {
         margin-bottom: 1rem;
@@ -179,7 +182,7 @@ body {
 
 .listen-channel-icons {
     a {
-        margin-left: 2rem;
+        margin-left: 20px;
     }
 }
 
@@ -206,11 +209,11 @@ body {
 }
 
 .release-date {
-    margin-bottom: 1rem;
+    margin-bottom: 10px;
 }
 
 .release-title {
-    margin: 2rem 0;
+    margin: 20px 0;
 }
 
 .release-info-wrap {
@@ -221,7 +224,7 @@ body {
 }
 
 .track-list {
-    padding-left: 1em;
+    padding-left: 10px;
     order: 2;
 
     @media screen and (min-width: $mobile-md) and (min-height: $mobile-md) {
@@ -279,7 +282,7 @@ body {
     width: 100%;
     flex: 0 1 auto;
     order: 1;
-    margin-bottom: 2rem;
+    margin-bottom: 20px;
 
     @media screen and (min-width: $mobile-md) and (min-height: $mobile-md) {
         width: 33.3%;
@@ -323,7 +326,7 @@ body {
 }
 
 .live-show-date {
-    margin-right: 2rem;
+    margin-right: 20px;
 }
 
 .content-background {
@@ -351,7 +354,7 @@ body {
 
 .social-label {
     color: $text;
-    margin-left: 1rem;
+    margin-left: 10px;
 }
 
 .at-sign {
@@ -377,8 +380,8 @@ body {
 
 .scroll-here {
     position: absolute;
-    top: 1.6rem;
-    right: 1.6rem;
+    top: 16px;
+    right: 16px;
     width: 24px;
     
     &::after {
@@ -393,19 +396,29 @@ body {
     z-index: 3;
     left: 0;
     bottom: 0;
-    height: 160px;
-    width: 317px;
-    background-image: url(assets/SH_SS_rocks_footer@1x.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+    width: 75%;
 
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        background-image: url(assets/SH_SS_rocks_footer@2x.png);
+    @media screen and (min-width: $screen-md) {
+        width: 50%;
     }
+
+    &::after {
+        content: ' ';
+        display: block;
+        padding-top: 50%;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-image: url(assets/SH_SS_rocks_footer@1x.png);
+
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            background-image: url(assets/SH_SS_rocks_footer@2x.png);
+        }
+    }
+
 }
 
 @media screen and (max-height: $mobile-md) {
-    .content-viewer { padding-bottom: 2rem; }
+    .content-viewer { padding-bottom: 24px; }
     .footer-rocks { display: none; }
     .scroll-here-wrap { display: none; }
 }
