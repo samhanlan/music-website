@@ -20,7 +20,7 @@ module.exports = {
                 use: {
                     loader: 'html-loader',
                     options: {
-                        attrs: ['link:href', 'img:src', 'image:href', 'audio:src'],
+                        attrs: ['link:href', 'img:src', 'image:href', 'audio:src', 'source:src'],
                     }
                 },
             },
