@@ -1,10 +1,9 @@
+$dark: #14171c;
+$light: #fafae5;
+
 @import '../styles/normalise';
 @import '../styles/viewports';
-
-$bg: #14171c;
-// $text: #dfe3ba;
-// $text: #f0efe2;
-$text: #fafae5;
+@import './styles/audio-player';
 
 html,
 body {
@@ -20,8 +19,8 @@ html {
 }
 
 body {
-    background-color: $bg;
-    color: $text;
+    background-color: $dark;
+    color: $light;
     font-family: sans-serif;
     font-size: 1.8rem;
     display: flex;
@@ -104,7 +103,7 @@ body {
 }
 
 .header-subtitle {
-    color: $text;
+    color: $light;
     font-size: 1.6rem;
     display: flex;
     align-items: flex-end;
@@ -174,38 +173,31 @@ body {
     }
 }
 
-.content-listen-header {
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
+.listen-section-subtitle {
+    margin-bottom: 1.5rem;
 }
 
-.listen-channel-icons {
-    a {
-        margin-left: 20px;
+.current-track-display {
+    font-family: monospace;
+    opacity: 1;
+    transition: 1s opacity ease;
+    animation: blinker 2s ease-out infinite;
+    animation-delay: 1s;
+
+    &.hide {
+        opacity: 0;
+        animation: none;
+    }
+
+    &::before {
+        content: '»';
+        display: inline-block;
+        margin: 0 1em;
     }
 }
 
-#soundcloud-widget {
-    position: relative;
-    height: 166px;
-    background-color: $text;
-    border-radius: 4px;
-
-    iframe {
-        position: absolute;
-        z-index: 2;
-    }
-
-    &::after {
-        content: 'loading player...';
-        color: $bg;
-        position: absolute;
-        z-index: 1;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+@keyframes blinker {
+    50% { opacity: 0.66 }
 }
 
 .release-date {
@@ -349,16 +341,16 @@ body {
     width: 24px;
     height: 24px;
     vertical-align: middle;
-    fill: $text;
+    fill: $light;
 }
 
 .social-label {
-    color: $text;
+    color: $light;
     margin-left: 10px;
 }
 
 .at-sign {
-    fill: $text;
+    fill: $light;
     width: 1rem;
     height: 1rem;
     vertical-align: middle;
@@ -375,7 +367,7 @@ body {
     width: 100%;
     bottom: 0;
     left: 0;
-    background-color: $bg;
+    background-color: $dark;
 }
 
 .scroll-here {

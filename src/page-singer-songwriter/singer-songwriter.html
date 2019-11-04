@@ -21,20 +21,29 @@
             <main class="content-wrap">
                 <container class="content-viewer">
                     <section class="content-cover"></section>
-                    <!-- <section class="content-listen section">
-                        <div class="content-listen-header"> -->
-                            <!-- <h3>listen</h3> -->
-                            <!-- <div class="listen-channel-icons">
-                                <a href="https://spotify.com" target="_blank">
-                                    <svg class="social-icon icon-spotify" role="img" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#spotify-icon" viewBox="0 0 24 24"></use></svg>
-                                </a>
-                                <a href="https://bandcamp.samhanlan.com" target="_blank">
-                                    <svg class="social-icon icon-bandcamp" role="img" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#bandcamp-icon" viewBox="0 0 24 24"></use></svg>
-                                </a>
-                            </div> -->
-                        <!-- </div> -->
-                        <!-- <div id="soundcloud-widget"></div> -->
-                    <!-- </section> -->
+                    <section class="content-listen section">
+                        <div class="content-listen-header">
+                            <h3 class="listen-section-title">listen</h3>
+                            <p class="listen-section-subtitle">EP preview<span class="current-track-display hide">No One Escapes</span></p>
+                        </div>
+                        <div id="trailer-custom-audio-player">
+                            <span class="audio-transport-control show-play-btn">
+                                <svg class="audio-play-button" viewBox="0 0 200 200" alt="Play audio playback" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="100" cy="100" r="90" fill="none" stroke-width="15"/>
+                                    <polygon points="70, 55 70, 145 145, 100"/>
+                                </svg>
+                                <svg class="audio-pause-button" viewBox="0 0 24 24" alt="Pause audio playback" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1 17h-3v-10h3v10zm5 0h-3v-10h3v10z"/>
+                                </svg>
+                            </span>
+                            <span class="audio-timeline">
+                                <span class="audio-progress"></span>
+                            </span>
+                            <audio id="audio-native-player" controls>
+                                <source src="assets/SH_SR_trailerV1.mp3" type="audio/mpeg"/>
+                            </audio>
+                        </div>
+                    </section>
                     <section class="content-releases section">
                         <h3>releases</h3>
                         <p class="release-date">2019</p>
@@ -58,15 +67,18 @@
                                         or leave the love to rust.<br/><br/>
                                         I will always have my sympathies for you<br/>
                                         let's loosen up the bandages, inspect the wounds<br/>
-                                        I'll show you mine, you show me yours, we've nothing to prove<br/>
+                                        I'll show you mine, you show me yours<br/>
+                                        we've nothing to prove<br/>
                                         we're just a pair of hypercondiacs in bloom.<br/><br/>
                                         You: trained to stay
                                         a little faith couldn't save you<br/>
                                         no better off getting lost<br/>
-                                        with the one who couldn't hope to stay afloat.<br/><br/>
+                                        with the one who couldn't hope<br/>
+                                        to stay afloat.<br/><br/>
                                         Turned up one day, took it all away<br/>
                                         what a waste of space<br/>
-                                        he's all guts and no brains, but the heart breaks all the same<br/>
+                                        he's all guts and no brains,<br/>
+                                        but the heart breaks all the same<br/>
                                         and <i>no one escapes</i><br/>
                                         trying desperately to come clean<br/>
                                         fuck sake, just say what you mean<br/>
@@ -76,7 +88,8 @@
                                         You: trained to stay<br/>
                                         blamed away that behaviour<br/>
                                         no better off getting lost<br/>
-                                        with the one who couldn't hope to stay afloat.<br/><br/>
+                                        with the one who couldn't hope<br/>
+                                        to stay afloat.<br/><br/>
                                         Let me help you man, 'cus I have been there<br/>
                                         and I can tell you that it don't go anywhere<br/>
                                         you've got to stack your needs<br/>
