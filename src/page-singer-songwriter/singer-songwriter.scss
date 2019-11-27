@@ -1,31 +1,31 @@
 $dark: #14171c;
 $light: #fafae5;
 
-@import '../styles/normalise';
-@import '../styles/viewports';
-@import './styles/audio-player';
+@import "../styles/normalise";
+@import "../styles/viewports";
+@import "./styles/audio-player";
 
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 
 html {
-    font-size: 62.5%;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-size: 62.5%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-    background-color: $dark;
-    color: $light;
-    font-family: sans-serif;
-    font-size: 1.8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: $dark;
+  color: $light;
+  font-family: sans-serif;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-title-sam-hanlan,
@@ -33,384 +33,407 @@ body {
 .sharp-relief-text,
 .scroll-here,
 .lyrics-reveal-btn {
-    &::after {
-        content: ' ';
-        display: block;
-        background-image: url(assets/SH_SS_sprite1@1x.jpg);
-        background-repeat: no-repeat;
-        background-size: auto 100%;
+  &::after {
+    content: " ";
+    display: block;
+    background-image: url(assets/SH_SS_sprite1@1x.jpg);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
 
-        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-            background-image: url(assets/SH_SS_sprite1@2x.jpg);
-        }
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      background-image: url(assets/SH_SS_sprite1@2x.jpg);
     }
+  }
 }
 
 .container {
-    position: relative;
-    display: block;
-    height: 100%;
-    overflow: hidden;
-    max-height: 1024px;
+  position: relative;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  max-height: 1024px;
 
-    @media screen and (min-width: $mobile-md) {
-        max-width: 100vh;
-    }
+  @media screen and (min-width: $mobile-md) {
+    max-width: 100vh;
+  }
 
-    @media screen and (min-width: $screen-md) {
-        max-width: 768px;
-    }
+  @media screen and (min-width: $screen-md) {
+    max-width: 768px;
+  }
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 24px;
-    
-    @media screen and (min-height: $mobile-md) and (min-width: $mobile-md) {
-        flex-flow: column;
-    }
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+
+  @media screen and (min-height: $mobile-md) and (min-width: $mobile-md) {
+    flex-flow: column;
+  }
 }
 
 .header-title-sam-hanlan {
-    width: 10.5rem;
-    margin-left: 24px;
+  width: 10.5rem;
+  margin-left: 24px;
 
-    &::after {
-        background-position: 0 0;
-        padding-top: 34.2%;
-    }
+  &::after {
+    background-position: 0 0;
+    padding-top: 34.2%;
+  }
 }
 
 .header-lower {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .header-rocks {
-    display: none;
-    width: 105px;
-    
-    @media screen and (min-height: $mobile-md) and (min-width: $mobile-md) {
-        display: block;
-    }
-    
-    &::after {
-        padding-top: 35%;
-        background-position: 45% 0;
-    }
+  display: none;
+  width: 105px;
+
+  @media screen and (min-height: $mobile-md) and (min-width: $mobile-md) {
+    display: block;
+  }
+
+  &::after {
+    padding-top: 35%;
+    background-position: 45% 0;
+  }
 }
 
 .header-subtitle {
-    color: $light;
-    font-size: 1.6rem;
-    display: flex;
-    align-items: flex-end;
-    flex-flow: column;
-    padding-right: 2.4rem;
-    padding-bottom: 1.6rem;
+  color: $light;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: flex-end;
+  flex-flow: column;
+  padding-right: 2.4rem;
+  padding-bottom: 1.6rem;
 }
 
 .sharp-relief-text {
-    display: block;
-    width: 105px;
+  display: block;
+  width: 105px;
 
-    &::after {
-        padding-top: 22%;
-        background-position: 90% 0;
-        background-size: auto 154%;
-    }
+  &::after {
+    padding-top: 22%;
+    background-position: 90% 0;
+    background-size: auto 154%;
+  }
 }
 
 .header-subtitle-release-date {
-    text-align: right;
+  text-align: right;
 }
 
 .content-wrap {
-    padding: 0 24px;
-    height: calc(100% - 128px);
-    overflow-y: scroll;
-    overflow-x: hidden;
+  padding: 0 24px;
+  height: calc(100% - 128px);
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .content-viewer {
-    display: block;
+  display: block;
 }
 
 .content-cover {
-    display: block;
-    overflow: hidden;
-    height: 0;
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: cover;
-    background-image: url(assets/SH_SS_sharp_relief_cover_raw_sm@1x.jpg);
-    padding-top: 175%;
+  display: block;
+  overflow: hidden;
+  height: 0;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-image: url(assets/SH_SS_sharp_relief_cover_raw_sm@1x.jpg);
+  padding-top: 175%;
 
-    @media screen and (max-width: $tablet-min) and (-webkit-min-device-pixel-ratio: 2),
-        screen and (max-width: $tablet-min) and (min-resolution: 192dpi) {
-        background-image: url(assets/SH_SS_sharp_relief_cover_raw_sm@2x.jpg);
-    }
+  @media screen and (max-width: $tablet-min) and (-webkit-min-device-pixel-ratio: 2),
+    screen and (max-width: $tablet-min) and (min-resolution: 192dpi) {
+    background-image: url(assets/SH_SS_sharp_relief_cover_raw_sm@2x.jpg);
+  }
 
-    @media screen and (min-width: $tablet) {
-        background-image: url(assets/SH_SS_sharp_relief_cover_raw_lg@1x.jpg);
-        padding-top: 125%;
-    
-    }
-    @media screen and (min-width: $tablet) and (-webkit-min-device-pixel-ratio: 2),
-        screen and (min-width: $tablet) and (min-resolution: 192dpi) {
-        background-image: url(assets/SH_SS_sharp_relief_cover_raw_lg@2x.jpg);
-    }
+  @media screen and (min-width: $tablet) {
+    background-image: url(assets/SH_SS_sharp_relief_cover_raw_lg@1x.jpg);
+    padding-top: 125%;
+  }
+  @media screen and (min-width: $tablet) and (-webkit-min-device-pixel-ratio: 2),
+    screen and (min-width: $tablet) and (min-resolution: 192dpi) {
+    background-image: url(assets/SH_SS_sharp_relief_cover_raw_lg@2x.jpg);
+  }
 }
 
 .section {
-    display: block;
-    margin-top: 30px;
+  display: block;
+  margin-top: 30px;
 
-    h3 {
-        margin-bottom: 1rem;
-    }
+  h3 {
+    margin-bottom: 1rem;
+  }
 }
 
 .listen-section-subtitle {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .current-track-display {
-    font-family: monospace;
-    opacity: 1;
-    transition: 1s opacity ease;
-    animation: blinker 2s ease-out infinite;
-    animation-delay: 1s;
+  font-family: monospace;
+  opacity: 1;
+  transition: 1s opacity ease;
+  animation: blinker 2s ease-out infinite;
+  animation-delay: 1s;
 
-    &.hide {
-        opacity: 0;
-        animation: none;
-    }
+  &.hide {
+    opacity: 0;
+    animation: none;
+  }
 
-    &::before {
-        content: '»';
-        display: inline-block;
-        margin: 0 1em;
-    }
+  &::before {
+    content: "»";
+    display: inline-block;
+    margin: 0 1em;
+  }
 }
 
 @keyframes blinker {
-    50% { opacity: 0.66 }
+  50% {
+    opacity: 0.66;
+  }
 }
 
 .release-date {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .release-title {
-    margin: 20px 0;
+  margin: 20px 0;
+}
+
+.release-download-btn {
+  display: inline-block;
+  padding: 1rem 1.6rem;
+  border: 4px solid $light;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background-color: $light;
+  color: $dark;
+  transition: background-color ease 0.4s, color ease 0.4s;
+
+  &:hover {
+    color: $light;
+    background-color: transparent;
+  }
 }
 
 .release-info-wrap {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: row;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .track-list {
-    padding-left: 10px;
-    order: 2;
+  padding-left: 10px;
+  order: 2;
 
-    @media screen and (min-width: $mobile-md) and (min-height: $mobile-md) {
-        width: 66.6%;
-        order: 1;
-    }
+  @media screen and (min-width: $mobile-md) and (min-height: $mobile-md) {
+    width: 66.6%;
+    order: 1;
+  }
 
-    li {
-        line-height: 2;
-        white-space: nowrap;
-        
-        label {
-            cursor: pointer;
-        }
+  li {
+    line-height: 2;
+    white-space: nowrap;
+
+    label {
+      cursor: pointer;
     }
+  }
 }
 
 .lyrics-reveal-btn {
-    vertical-align: middle;
-    display: inline-block;
-    overflow: hidden;
-    width: 25px;
-    transform: rotate(180deg) scale(0.66);
-    transition: transform .4s ease-in-out;
+  vertical-align: middle;
+  display: inline-block;
+  overflow: hidden;
+  width: 25px;
+  transform: rotate(180deg) scale(0.66);
+  transition: transform 0.4s ease-in-out;
 
-    &::after {
-        padding-top: 100%;
-        background-position: 100% 0;
-        background-size: auto 145%;
-    }
+  &::after {
+    padding-top: 100%;
+    background-position: 100% 0;
+    background-size: auto 145%;
+  }
 }
 
 .lyrics {
-    font-family: monospace;
-    line-height: 1.5;
-    display: block;
-    height: 0;
-    overflow: hidden;
+  font-family: monospace;
+  line-height: 1.5;
+  display: block;
+  height: 0;
+  overflow: hidden;
 }
 
 .lyrics-checkbox:checked {
-    & ~ .lyrics {
-        height: auto;
-    }
-    & ~ label .lyrics-reveal-btn {
-        transform: rotate(0) scale(0.66);
-    }
+  & ~ .lyrics {
+    height: auto;
+  }
+  & ~ label .lyrics-reveal-btn {
+    transform: rotate(0) scale(0.66);
+  }
 }
 
 .elipses {
-    vertical-align: super;
+  vertical-align: super;
 }
 
 .release-cover {
-    width: 100%;
-    flex: 0 1 auto;
-    order: 1;
-    margin-bottom: 20px;
+  width: 100%;
+  flex: 0 1 auto;
+  order: 1;
+  margin-bottom: 20px;
 
-    @media screen and (min-width: $mobile-md) and (min-height: $mobile-md) {
-        width: 33.3%;
-        order: 2;
-        margin-bottom: 0;
-    }
+  @media screen and (min-width: $mobile-md) and (min-height: $mobile-md) {
+    width: 33.3%;
+    order: 2;
+    margin-bottom: 0;
+  }
 }
 
 .release-cover-sharp-relief {
-    display: block;
-    width: 100%;
-    height: 0;
-    padding-top: 100%;
-    overflow: hidden;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url(assets/SH_SS_sharp_relief_cover_sm@1x.jpg);
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(assets/SH_SS_sharp_relief_cover_sm@1x.jpg);
 
-    @media screen and (max-width: $mobile-md-min) and (-webkit-min-device-pixel-ratio: 2),
-        screen and (max-width: $mobile-md-min) and (min-resolution: 192dpi) {
-        background-image: url(assets/SH_SS_sharp_relief_cover_sm@2x.jpg);
-    }
+  @media screen and (max-width: $mobile-md-min) and (-webkit-min-device-pixel-ratio: 2),
+    screen and (max-width: $mobile-md-min) and (min-resolution: 192dpi) {
+    background-image: url(assets/SH_SS_sharp_relief_cover_sm@2x.jpg);
+  }
 
-    @media screen and (max-width: $tablet-min) and (min-width: $mobile-md) {
-        background-image: url(assets/SH_SS_sharp_relief_cover_md@1x.jpg);
-    }
+  @media screen and (max-width: $tablet-min) and (min-width: $mobile-md) {
+    background-image: url(assets/SH_SS_sharp_relief_cover_md@1x.jpg);
+  }
 
-    @media screen and (max-width: $tablet-min) and (min-width: $mobile-md) and (-webkit-min-device-pixel-ratio: 2),
-        screen and (max-width: $tablet-min) and (min-width: $mobile-md) and (min-resolution: 192dpi) {
-        background-image: url(assets/SH_SS_sharp_relief_cover_md@2x.jpg);
-    }
+  @media screen and (max-width: $tablet-min) and (min-width: $mobile-md) and (-webkit-min-device-pixel-ratio: 2),
+    screen and (max-width: $tablet-min) and (min-width: $mobile-md) and (min-resolution: 192dpi) {
+    background-image: url(assets/SH_SS_sharp_relief_cover_md@2x.jpg);
+  }
 
-    @media screen and (min-width: $screen-md) {
-        background-image: url(assets/SH_SS_sharp_relief_cover_lg@1x.jpg);
-    }
+  @media screen and (min-width: $screen-md) {
+    background-image: url(assets/SH_SS_sharp_relief_cover_lg@1x.jpg);
+  }
 
-    @media screen and (min-width: $screen-md) and (-webkit-min-device-pixel-ratio: 2),
-        screen and (min-width: $screen-md) and (min-resolution: 192dpi) {
-        background-image: url(assets/SH_SS_sharp_relief_cover_lg@2x.jpg);
-    }
+  @media screen and (min-width: $screen-md) and (-webkit-min-device-pixel-ratio: 2),
+    screen and (min-width: $screen-md) and (min-resolution: 192dpi) {
+    background-image: url(assets/SH_SS_sharp_relief_cover_lg@2x.jpg);
+  }
 }
 
 .live-show-date {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .content-background {
-    p {
-        line-height: 1.5;
-    }
+  p {
+    line-height: 1.5;
+  }
 }
 
 .content-contact {
-    h3 {
-        display: flex;
-        justify-content: space-between;
-    }
-    li {
-        line-height: 2;
-    }
+  h3 {
+    display: flex;
+    justify-content: space-between;
+  }
+  li {
+    line-height: 2;
+  }
 }
 
 .social-icon {
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
-    fill: $light;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  fill: $light;
 }
 
 .social-label {
-    color: $light;
-    margin-left: 10px;
+  color: $light;
+  margin-left: 10px;
 }
 
 .at-sign {
-    fill: $light;
-    width: 1rem;
-    height: 1rem;
-    vertical-align: middle;
+  fill: $light;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
 }
 
 .content-copyright {
-    text-align: center;
+  text-align: center;
 }
 
 .scroll-here-wrap {
-    position: absolute;
-    z-index: 3;
-    height: 105px;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    background-color: $dark;
+  position: absolute;
+  z-index: 3;
+  height: 105px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: $dark;
 }
 
 .scroll-here {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 24px;
-    
-    &::after {
-        padding-top: 130%;
-        background-position: 100% 0;
-        background-size: auto 110%;
-    }
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 24px;
+
+  &::after {
+    padding-top: 130%;
+    background-position: 100% 0;
+    background-size: auto 110%;
+  }
 }
 
 .footer-rocks {
-    position: absolute;
-    z-index: 3;
-    left: 0;
-    bottom: 0;
-    width: 75%;
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  bottom: 0;
+  width: 75%;
 
-    @media screen and (min-width: $screen-md) {
-        width: 50%;
+  @media screen and (min-width: $screen-md) {
+    width: 50%;
+  }
+
+  &::after {
+    content: " ";
+    display: block;
+    padding-top: 50%;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-image: url(assets/SH_SS_rocks_footer@1x.png);
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      background-image: url(assets/SH_SS_rocks_footer@2x.png);
     }
-
-    &::after {
-        content: ' ';
-        display: block;
-        padding-top: 50%;
-        background-repeat: no-repeat;
-        background-size: auto 100%;
-        background-image: url(assets/SH_SS_rocks_footer@1x.png);
-
-        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-            background-image: url(assets/SH_SS_rocks_footer@2x.png);
-        }
-    }
-
+  }
 }
 
 @media screen and (max-height: $mobile-md) {
-    .content-viewer { padding-bottom: 24px; }
-    .footer-rocks { display: none; }
-    .scroll-here-wrap { display: none; }
+  .content-viewer {
+    padding-bottom: 24px;
+  }
+  .footer-rocks {
+    display: none;
+  }
+  .scroll-here-wrap {
+    display: none;
+  }
 }
