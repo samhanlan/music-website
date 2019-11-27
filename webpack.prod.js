@@ -12,8 +12,9 @@ const getHtmlPluginConfig = name => ({
     inject: true,
     inlineSource: '.js$',
     chunks: [name],
-    filename: name === 'index' ? 'index.html' : `${name}/${name}.html`,
+    filename: name === 'index' ? 'index.html' : `${name}/index.html`,
     minify: {
+        removeComments: true,
         removeAttributeQuotes: true,
         collapseWhitespace: true,
     }

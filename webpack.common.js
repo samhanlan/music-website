@@ -11,7 +11,7 @@ module.exports = {
     },
     output: {
         path: BUILD_PATH,
-        filename: chunkData => chunkData.chunk.name === 'index' ? '[name].js' : '[name]/[name].js',
+        filename: chunkData => chunkData.chunk.name === 'index' ? 'index.js' : '[name]/[name].js',
     },
     module: {
         rules: [
