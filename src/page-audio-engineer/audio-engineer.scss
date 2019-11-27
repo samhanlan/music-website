@@ -6,352 +6,406 @@ $light: white;
 $border: 4px solid $dark;
 
 html {
-    font-size: 62.5%;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-size: 62.5%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-    font-family: sans-serif;
-    background-color: $light;
-    color: $dark;
+  font-family: sans-serif;
+  background-color: $light;
+  color: $dark;
 }
 
 p {
-    font-size: 1.6rem;
-    font-weight: lighter;
-    line-height: 1.6;
-    margin-bottom: 16px;
+  font-size: 1.6rem;
+  font-weight: lighter;
+  line-height: 1.6;
+  margin-bottom: 16px;
 
-    .credits & {
-        margin-bottom: 0;
-        font-size: 1.4rem;
-        font-weight: normal;
-    }
+  .credits & {
+    margin-bottom: 0;
+    font-size: 1.4rem;
+    font-weight: normal;
+  }
 }
 
 h1 {
-    font-size: 2.4rem;
-    margin-bottom: 8px;
-    padding-bottom: 8px;
-    border-bottom: $border;
+  font-size: 2.4rem;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: $border;
 }
 
 h2 {
-    font-size: 2rem;
-    margin-bottom: 16px;
+  font-size: 2rem;
+  margin-bottom: 16px;
 
-    .credits & {
-        margin-bottom: 0;
+  .credits & {
+    margin-bottom: 0;
 
-        span {
-            font-size: 0.75em;
-        }
+    span {
+      font-size: 0.75em;
     }
-    .artist-profile & {
-        margin-bottom: 24px;   
-    }
+  }
+  .artist-profile & {
+    margin-bottom: 24px;
+  }
 }
 
 h3 {
-    font-size: 1.8rem;
+  font-size: 1.8rem;
 
-    .contact & {
-        font-weight: lighter;
-        margin-bottom: 32px;
-    }
+  .contact & {
+    font-weight: lighter;
+    margin-bottom: 32px;
+  }
 }
 
 h4 {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
 }
 
 article {
-    display: block;
-    margin-bottom: 48px;
+  display: block;
+  margin-bottom: 48px;
 }
 
 img {
-    width: 100%;
+  width: 100%;
 
-    .contact & {
-        margin-top: 48px;
-    }
+  .contact & {
+    margin-top: 48px;
+  }
 }
 
 iframe {
-    .credits & {
-        margin-top: 16px;
-    }
+  .credits & {
+    margin-top: 16px;
+  }
 }
 
 .grid-container {
-    display: grid;
-    width: 100%;
-    margin: 0 auto;
-    grid-template-columns: 1fr;
+  display: grid;
+  width: 100%;
+  margin: 0 auto;
+  grid-template-columns: 1fr;
 
-    @media screen and (min-width: $mobile-md) {
-        grid-template-columns: 1fr 2fr;
+  @media screen and (min-width: $mobile-md) {
+    grid-template-columns: 1fr 2fr;
 
-        #content-display {
-            grid-column: span 2;
-        }
-        #sidebar {
-            grid-column: span 2;
-        }
+    #content-display {
+      grid-column: span 2;
     }
-    @media screen and (min-width: $tablet) {
-        #content-display {
-            order: 4;
-            grid-column: span 1;
-        }
-        #sidebar {
-            order: 3;
-            grid-column: span 1;
-        }
+    #sidebar {
+      grid-column: span 2;
     }
-    @media screen and (min-width: $screen-md) {
-        grid-template-columns: 1fr 3fr;
-        width: $screen-md;
+  }
+  @media screen and (min-width: $tablet) {
+    #content-display {
+      order: 4;
+      grid-column: span 1;
     }
+    #sidebar {
+      order: 3;
+      grid-column: span 1;
+    }
+  }
+  @media screen and (min-width: $screen-md) {
+    grid-template-columns: 1fr 3fr;
+    width: $screen-md;
+  }
 }
 
 .logo-wrap {
-    order: 1;
-    padding: 32px;
-    border-bottom: $border;
-    
-    @media screen and (min-width: $mobile-md) {
-        padding: 32px 16px 16px 16px;
-    }
+  order: 1;
+  padding: 32px;
+  border-bottom: $border;
+
+  @media screen and (min-width: $mobile-md) {
+    padding: 32px 16px 16px 16px;
+  }
 }
 
 .logo {
-    display: block;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    padding-top: 70%;
-    background-image: url(../assets/SH_logo@1x.jpg);
+  display: block;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding-top: 70%;
+  background-image: url(../assets/SH_logo@1x.jpg);
 
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        background-image: url(../assets/SH_logo@2x.jpg);
-    }
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    background-image: url(../assets/SH_logo@2x.jpg);
+  }
 }
 
 nav {
-    order: 2;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: stretch;
-    border-bottom: $border;
-    
+  order: 2;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch;
+  border-bottom: $border;
+
+  @media screen and (min-width: $mobile-md) {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+    border-left: $border;
+  }
+
+  a {
+    font-size: 1.6rem;
+    color: $dark;
+    text-align: center;
+    padding: 16px 0;
+    flex: auto;
+
     @media screen and (min-width: $mobile-md) {
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        align-items: flex-end;
-        border-left: $border;
+      flex: 0 1;
+      padding: 16px;
+    }
+    @media screen and (min-width: $tablet) {
+      padding: 32px 24px 16px;
     }
 
-    a {
-
-        font-size: 1.6rem;
-        color: $dark;
-        text-align: center;
-        padding: 16px 0;
-        flex: auto;
-        
-        @media screen and (min-width: $mobile-md) {
-            flex: 0 1;
-            padding: 16px;
-        }
-        @media screen and (min-width: $tablet) {
-            padding: 32px 24px 16px;
-        }
-
-        &:hover,
-        &.active {
-            background-image: url(assets/nav.jpg);
-            color: $light;
-        }
+    &:hover,
+    &.active {
+      background-image: url(assets/nav.jpg);
+      color: $light;
     }
+  }
 }
 
 #sidebar {
-    order: 4;
-    display: flex;
+  order: 4;
+  display: flex;
 }
 
 #sidebar-background {
-    flex: 1;
-    background-size: contain;
-    
-    .home & { display: none; }
+  flex: 1;
+  background-size: contain;
 
-    @media screen and (min-width: $tablet) {
-        .about & { background-image: url(assets/sbr_alt1.jpg) }
-        .latest & { background-image: url(assets/sbr_alt2.jpg) }
-        .credits & { background-image: url(assets/sbr_alt3.jpg) }
-        .contact & { background-image: url(assets/sbr_alt4.jpg) }
+  .home & {
+    display: none;
+  }
+
+  @media screen and (min-width: $tablet) {
+    .about & {
+      background-image: url(assets/sbr_alt1.jpg);
     }
+    .latest & {
+      background-image: url(assets/sbr_alt2.jpg);
+    }
+    .credits & {
+      background-image: url(assets/sbr_alt3.jpg);
+    }
+    .contact & {
+      background-image: url(assets/sbr_alt4.jpg);
+    }
+  }
 }
 
 #portfolio-list {
-    flex: 1;
-    display: none;
+  flex: 1;
+  display: none;
 
-    .home & { display: block }
-    .hastouchevents & { overflow: hidden }
+  .home & {
+    display: block;
+  }
+  .hastouchevents & {
+    overflow: hidden;
+  }
 }
 
 .portfolio-item {
-    height: 48px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+  height: 48px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 
+  .portfolio-artwork {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s left ease, 0.5s width ease;
+  }
+
+  &:hover {
     .portfolio-artwork {
-        position: absolute;
-        top: 0;
-        left: 0;
-        transition: 0.5s left ease, 0.5s width ease;
+      left: 100%;
+      width: 300%;
     }
-
-    &:hover {
-        .portfolio-artwork {
-            left: 100%;
-            width: 300%;
-        }
-        .portfolio-title {
-            transform: translateX(8px);
-        }
+    .portfolio-title {
+      transform: translateX(8px);
     }
+  }
 }
 
 .portfolio-title {
-    font-size: 1.4rem;
-    margin: 0 8px;
-    transition: 0.2s transform ease;
+  font-size: 1.4rem;
+  margin: 0 8px;
+  transition: 0.2s transform ease;
 }
-
 
 .portfolio-artwork {
+  display: block;
+  height: 48px;
+  width: 100%;
+
+  &::after {
+    content: " ";
     display: block;
-    height: 48px;
-    width: 100%;
+    height: 100%;
+    background-size: auto;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-image: url(assets/portfolio-slices.jpg);
+  }
 
-    &::after {
-        content: ' ';
-        display: block;
-        height: 100%;
-        background-size: auto;
-        background-position-x: center;
-        background-repeat: no-repeat;
-        background-image: url(assets/portfolio-slices.jpg);
-    
-    }
-
-    .credits & {
-        margin-bottom: 32px;
-    }
+  .credits & {
+    margin-bottom: 32px;
+  }
 }
 
-.artwork-AVP::after  { background-position-y: 0px }
-.artwork-BC::after   { background-position-y: -48px }
-.artwork-BS::after   { background-position-y: -96px }
-.artwork-BSS::after  { background-position-y: -144px }
-.artwork-CAL::after  { background-position-y: -192px }
-.artwork-CPA::after  { background-position-y: -240px }
-.artwork-CPE::after  { background-position-y: -288px }
-.artwork-DL::after   { background-position-y: -336px }
-.artwork-DTS2::after { background-position-y: -384px }
-.artwork-DTS1::after { background-position-y: -432px }
-.artwork-FAS::after  { background-position-y: -480px }
-.artwork-GF::after   { background-position-y: -528px }
-.artwork-NAN::after  { background-position-y: -576px }
-.artwork-OIP::after  { background-position-y: -624px }
-.artwork-OT::after   { background-position-y: -672px }
-.artwork-REC::after  { background-position-y: -720px }
-.artwork-SS::after   { background-position-y: -768px }
-.artwork-3PS::after  { background-position-y: -816px }
+.artwork-AVP::after {
+  background-position-y: 0px;
+}
+.artwork-BC::after {
+  background-position-y: -48px;
+}
+.artwork-BS::after {
+  background-position-y: -96px;
+}
+.artwork-BSS::after {
+  background-position-y: -144px;
+}
+.artwork-CAL::after {
+  background-position-y: -192px;
+}
+.artwork-CPA::after {
+  background-position-y: -240px;
+}
+.artwork-CPE::after {
+  background-position-y: -288px;
+}
+.artwork-DL::after {
+  background-position-y: -336px;
+}
+.artwork-DTS2::after {
+  background-position-y: -384px;
+}
+.artwork-DTS1::after {
+  background-position-y: -432px;
+}
+.artwork-FAS::after {
+  background-position-y: -480px;
+}
+.artwork-GF::after {
+  background-position-y: -528px;
+}
+.artwork-NAN::after {
+  background-position-y: -576px;
+}
+.artwork-OIP::after {
+  background-position-y: -624px;
+}
+.artwork-OT::after {
+  background-position-y: -672px;
+}
+.artwork-REC::after {
+  background-position-y: -720px;
+}
+.artwork-SS::after {
+  background-position-y: -768px;
+}
+.artwork-3PS::after {
+  background-position-y: -816px;
+}
+.artwork-SHSR::after {
+  background-position-y: -864px;
+}
 
 #content-display {
-    order: 3;
-    padding: 32px 16px;
+  order: 3;
+  padding: 32px 16px;
 
-    @media screen and (min-width: $tablet) {
-        border-left: $border;
-        padding: 24px;
-    }
-    @media screen and (min-width: $screen-md) { padding: 48px; }
-    @media screen and (min-width: $screen-lg) { padding: 96px; }
+  @media screen and (min-width: $tablet) {
+    border-left: $border;
+    padding: 24px;
+  }
+  @media screen and (min-width: $screen-md) {
+    padding: 48px;
+  }
+  @media screen and (min-width: $screen-lg) {
+    padding: 96px;
+  }
 
-    .home & {
-        display: flex;
-        flex-wrap: wrap;
-    }
+  .home & {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .home-default-content {
-    h1 {
-        display: inline-block;
-    }
-    h2 {
-        margin-bottom: 48px;
-    }
-    h3 {
-        display: inline-block;
-        border-bottom: 2px solid $dark;
-        padding-bottom: 4px;
-        margin-bottom: 4px;
-    }
-    h4 {
-        font-weight: normal;
-    }
+  h1 {
+    display: inline-block;
+  }
+  h2 {
+    margin-bottom: 48px;
+  }
+  h3 {
+    display: inline-block;
+    border-bottom: 2px solid $dark;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+  }
+  h4 {
+    font-weight: normal;
+  }
 }
 
 .album-embed {
-    flex: 1;
-    margin-bottom: 32px;
-    min-width: 272px;
+  flex: 1;
+  margin-bottom: 32px;
+  min-width: 272px;
 
-    @media screen and (min-width: $mobile-md) {
-        margin-right: 24px;
-    }
+  @media screen and (min-width: $mobile-md) {
+    margin-right: 24px;
+  }
 }
 
 .iframe-large-wrap {
-    max-width: $tablet;
+  max-width: $tablet;
 }
 
 .artist-profile {
-    flex: 2 160px;
+  flex: 2 160px;
 }
 
 .at-sign {
-    width: 1em;
+  width: 1em;
 }
 
 footer {
-    order: 5;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px;
+  order: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
 
-    @media screen and (min-width: $mobile-md) {
-        grid-column: span 2;
-    }
+  @media screen and (min-width: $mobile-md) {
+    grid-column: span 2;
+  }
 
-    small {
-        font-size: 1.2rem;
-    }
+  small {
+    font-size: 1.2rem;
+  }
 }
 
 .return-home-btn {
-    flex: 0 1 4.5rem;
-    fill: $dark;
+  flex: 0 1 4.5rem;
+  fill: $dark;
 }
