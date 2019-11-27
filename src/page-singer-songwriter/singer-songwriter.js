@@ -14,7 +14,7 @@ import './singer-songwriter.scss'
 
     function initScrollInteraction() {
         const scrollHereEl = document.querySelector('.scroll-here');
-        const scrollDestinationSection = document.querySelector('.content-releases');
+        const scrollDestinationSection = document.querySelector('.content-listen');
 
         scrollHereEl.addEventListener('click', scrollToDestination);
 
