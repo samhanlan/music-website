@@ -273,6 +273,14 @@ body {
   display: block;
   height: 0;
   overflow: hidden;
+  padding-right: 2rem;
+}
+
+.lyrics-hr {
+  display: block;
+  padding-top: 2rem;
+  border-bottom: 1px solid $light;
+  margin-bottom: 2rem;
 }
 
 .lyrics-checkbox:checked {
