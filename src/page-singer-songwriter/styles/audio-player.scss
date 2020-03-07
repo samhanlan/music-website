@@ -1,57 +1,57 @@
 #audio-native-player {
-    display: none;
+  display: none;
 }
 
 #trailer-custom-audio-player {
-    width: 100%;
-    min-width: 280px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  min-width: 280px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .audio-transport-control {
-    display: flex;
-    width: 3em;
+  display: flex;
+  width: 3em;
 }
 
 .audio-play-button {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    circle {
-        fill: none;
-        stroke: $light;
-    }
-    polygon {
-        fill: $light;
-    }
+  circle {
+    fill: none;
+    stroke: $light;
+  }
+  polygon {
+    fill: $light;
+  }
 
-    .show-pause-btn & {
-        display: none;
-    }
+  .show-pause-btn & {
+    display: none;
+  }
 }
 
 .audio-pause-button {
-    width: 100%;
-    height: 100%;
-    fill: $light;
+  width: 100%;
+  height: 100%;
+  fill: $light;
 
-    .show-play-btn & {
-        display: none;
-    }
+  .show-play-btn & {
+    display: none;
+  }
 }
 
 .audio-timeline {
-    width: 100%;
-    height: 4px;
-    background-color: #888880;
+  width: 100%;
+  height: 4px;
+  background-color: #888880;
 }
 
 .audio-progress {
-    width: 0%;
-    height: 100%;
-    display: block;
-    border-right: 4px solid $dark;
-    background-color: $light;
+  width: 0%;
+  height: 100%;
+  display: block;
+  border-right: 4px solid $dark;
+  background-color: $light;
 }

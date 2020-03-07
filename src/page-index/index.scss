@@ -1,180 +1,206 @@
-@import '../styles/normalise.scss';
-@import '../styles/viewports.scss';
+@import "../styles/normalise.scss";
+@import "../styles/viewports.scss";
 
 $bg: #fefffd;
 $dark: #0b0608;
 
 html {
+  font-size: 24px;
+  @media screen and (min-width: $mobile-md) and (orientation: landscape) {
     font-size: 24px;
-    @media screen and (min-width: $mobile-md) and (orientation: landscape) { font-size: 24px; }
-    @media screen and (min-width: $tablet) and (orientation: portrait) { font-size: 42px; }
-    @media screen and (min-width: $tablet) and (orientation: landscape) { font-size: 28px; }
-    @media screen and (min-width: $screen-md) and (orientation: landscape) { font-size: 42px; }
-    @media screen and (min-width: $screen-lg) { font-size: 52px; }
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  }
+  @media screen and (min-width: $tablet) and (orientation: portrait) {
+    font-size: 42px;
+  }
+  @media screen and (min-width: $tablet) and (orientation: landscape) {
+    font-size: 28px;
+  }
+  @media screen and (min-width: $screen-md) and (orientation: landscape) {
+    font-size: 42px;
+  }
+  @media screen and (min-width: $screen-lg) {
+    font-size: 52px;
+  }
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-    background-color: $bg;
+  background-color: $bg;
 }
 
 #logo {
-    width: 33.3%;
-    max-width: 33.3vh;
-    position: fixed;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  width: 33.3%;
+  max-width: 33.3vh;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-    &::after {
-        content: ' ';
-        display: block;
-        padding-top: 71%;
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-image: url(../assets/SH_logo@1x.jpg);
+  &::after {
+    content: " ";
+    display: block;
+    padding-top: 71%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../assets/SH_logo@1x.jpg);
 
-        @media screen and (min-width: $tablet) {
-            background-image: url(../assets/SH_logo@2x.jpg);
-        }
+    @media screen and (min-width: $tablet) {
+      background-image: url(../assets/SH_logo@2x.jpg);
     }
+  }
 
-    @media screen and (orientation: landscape) {
-        top: 12.5vh;
-        transform: translate(-50%, 0);
-    }
+  @media screen and (orientation: landscape) {
+    top: 12.5vh;
+    transform: translate(-50%, 0);
+  }
 
-    @media screen and (min-width: $mobile-md) {
-        width: 50%;
-    }
+  @media screen and (min-width: $mobile-md) {
+    width: 50%;
+  }
 }
 
 .collage-img {
-    position: fixed;
-    display: block;
+  position: fixed;
+  display: block;
 
-    &::after {
-        content: ' ';
-        display: block;
-        background: url(assets/SH_collage_sprite@1x.png) no-repeat;
-        
-        @media screen and (min-width: $tablet) {
-            background-image: url(assets/SH_collage_sprite@2x.png);
-        }
+  &::after {
+    content: " ";
+    display: block;
+    background: url(assets/SH_collage_sprite@1x.png) no-repeat;
+
+    @media screen and (min-width: $tablet) {
+      background-image: url(assets/SH_collage_sprite@2x.png);
     }
+  }
 }
 
 .link-ring-graphic {
-    height: auto;
-    position: fixed;
-    z-index: 0;
-    width: 10.5rem;
-    
-    text {
-        font-size: 0.6rem;
-        font-family: sans-serif;
-        color: $dark;
+  height: auto;
+  position: fixed;
+  z-index: 0;
+  width: 10.5rem;
 
-        @media screen and (min-width: $mobile-md-min) and (orientation: portrait) { font-size: 0.7rem; }
-        @media screen and (min-width: $mobile-md-min) and (orientation: landscape) { font-size: 0.7rem; }
-        @media screen and (min-width: $tablet-min) and (orientation: portrait) { font-size: 0.33rem; }
-        @media screen and (min-width: $tablet-min) and (orientation: landscape) { font-size: 0.5rem; }
-        @media screen and (min-width: $screen-md-min) and (orientation: portrait) { font-size: 0.4rem; }
-        @media screen and (min-width: $screen-md-min) and (orientation: landscape) { font-size: 0.33rem; }
-    }
+  text {
+    font-size: 0.6rem;
+    font-family: sans-serif;
+    color: $dark;
 
-    circle {
-        fill: none;
-        stroke: $dark;
-        stroke-width: 1px;
+    @media screen and (min-width: $mobile-md-min) and (orientation: portrait) {
+      font-size: 0.7rem;
     }
+    @media screen and (min-width: $mobile-md-min) and (orientation: landscape) {
+      font-size: 0.7rem;
+    }
+    @media screen and (min-width: $tablet-min) and (orientation: portrait) {
+      font-size: 0.33rem;
+    }
+    @media screen and (min-width: $tablet-min) and (orientation: landscape) {
+      font-size: 0.5rem;
+    }
+    @media screen and (min-width: $screen-md-min) and (orientation: portrait) {
+      font-size: 0.4rem;
+    }
+    @media screen and (min-width: $screen-md-min) and (orientation: landscape) {
+      font-size: 0.33rem;
+    }
+  }
+
+  circle {
+    fill: none;
+    stroke: $dark;
+    stroke-width: 1px;
+  }
 }
 
 // singer songwriter
 #singer-songwriter-link-ring {
-    bottom: -1rem;
-    left: -4rem;
-    transform: rotate(25deg);
+  bottom: -1rem;
+  left: -4rem;
+  transform: rotate(25deg);
 }
 
 #singer-songwriter-collage {
-    bottom: -1px;
-    left: -1px;
-    width: 5rem;
+  bottom: -1px;
+  left: -1px;
+  width: 5rem;
 
-    &::after {
-        padding-top: 180%;
-        background-size: auto 100%;
-        background-position: 0 0;
-    }
+  &::after {
+    padding-top: 180%;
+    background-size: auto 100%;
+    background-position: 0 0;
+  }
 }
 
 // electronic musician
 #electronic-musician-link-ring {
-    transform: rotate(-26deg);
-    bottom: -2rem;
-    right: -3.5rem;
+  transform: rotate(-26deg);
+  bottom: -2rem;
+  right: -3.5rem;
 }
 
 #electronic-music-collage {
-    width: 5.5rem;
-    bottom: -1px;
-    right: -1px;
-    transform: scaleX(-1);
+  width: 5.5rem;
+  bottom: -1px;
+  right: -1px;
+  transform: scaleX(-1);
 
-    &::after {
-        padding-top: 177%;
-        background-size: auto 100%;
-        background-position: 100% 0;
-    }
+  &::after {
+    padding-top: 177%;
+    background-size: auto 100%;
+    background-position: 100% 0;
+  }
 }
 
 // audio engineer
 #audio-eng-link-ring {
-    display: block;
-    top: -4rem;
-    right: calc(50% - 5.5rem);
+  display: block;
+  top: -4rem;
+  right: calc(50% - 5.5rem);
 
+  &.landscape {
+    display: none;
+    top: unset;
+    bottom: -3rem;
+  }
+
+  @media screen and (orientation: landscape) {
+    display: none;
     &.landscape {
-        display: none;
-        top: unset;
-        bottom: -3rem;
+      display: block;
     }
-
-    @media screen and (orientation: landscape) {
-        display: none;
-        &.landscape { display: block; }
-    }
+  }
 }
 
 #audio-eng-collage {
-    width: 5.5rem;
-    top: -1px;
-    right: calc(50% - 9rem);
-    transform: rotate(90deg);
-    transform-origin: left top;
+  width: 5.5rem;
+  top: -1px;
+  right: calc(50% - 9rem);
+  transform: rotate(90deg);
+  transform-origin: left top;
 
-    &::after {
-        padding-top: 175%;
-        background-size: auto 128%;
-        background-position: 50% bottom;
-    }
+  &::after {
+    padding-top: 175%;
+    background-size: auto 128%;
+    background-position: 50% bottom;
+  }
 
+  &.landscape {
+    display: none;
+    top: unset;
+    bottom: -1px;
+    right: calc(50% - 11rem);
+    transform: rotate(270deg);
+    transform-origin: left bottom;
+  }
+
+  @media screen and (orientation: landscape) {
+    display: none;
     &.landscape {
-        display: none;
-        top: unset;
-        bottom: -1px;
-        right: calc(50% - 11rem);
-        transform: rotate(270deg);
-        transform-origin: left bottom;
+      display: block;
     }
-
-    @media screen and (orientation: landscape) {
-        display: none;
-        &.landscape { display: block; }
-    }
+  }
 }
