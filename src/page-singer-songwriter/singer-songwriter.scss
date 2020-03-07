@@ -209,8 +209,9 @@ body {
   margin: 20px 0;
 }
 
-.release-download-btn {
-  display: inline-block;
+.release-cta {
+  display: inline-flex;
+  align-items: center;
   padding: 1rem 1.6rem;
   border: 4px solid $light;
   border-radius: 6px;
@@ -220,10 +221,27 @@ body {
   color: $dark;
   transition: background-color ease 0.4s, color ease 0.4s;
 
+  .social-icon {
+    transition: fill ease 0.4s;
+    fill: $dark;
+  }
+
+  &:not(:last-of-type) {
+    margin-right: 20px;
+  }
+
   &:hover {
     color: $light;
     background-color: transparent;
+
+    .social-icon {
+      fill: $light;
+    }
   }
+}
+
+.release-cta-text {
+  margin-left: 10px;
 }
 
 .release-info-wrap {
