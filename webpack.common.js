@@ -7,12 +7,12 @@ module.exports = {
     index: "./src/page-index/index.js",
     "singer-songwriter": "./src/page-singer-songwriter/singer-songwriter.js",
     "freedom-and-such": "./src/page-freedom-and-such/freedom-and-such.js",
-    "audio-engineer": "./src/page-audio-engineer/audio-engineer.js"
+    "audio-engineer": "./src/page-audio-engineer/audio-engineer.js",
   },
   output: {
     path: BUILD_PATH,
-    filename: chunkData =>
-      chunkData.chunk.name === "index" ? "index.js" : "[name]/[name].js"
+    filename: (chunkData) =>
+      chunkData.chunk.name === "index" ? "index.js" : "[name]/[name].js",
   },
   module: {
     rules: [
@@ -20,22 +20,13 @@ module.exports = {
         test: /\.html$/,
         use: {
           loader: "html-loader",
-          options: {
-            attrs: [
-              "link:href",
-              "img:src",
-              "image:href",
-              "audio:src",
-              "source:src"
-            ]
-          }
-        }
+        },
       },
       {
         test: /\.(jpg|jpeg|png|gif|ico|mp3)$/,
-        use: ["file-loader"]
-      }
-    ]
+        use: ["file-loader"],
+      },
+    ],
   },
-  plugins: [new CleanWebpackPlugin()]
+  plugins: [new CleanWebpackPlugin()],
 };
