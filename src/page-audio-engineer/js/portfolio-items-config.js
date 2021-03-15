@@ -20,6 +20,17 @@ class ContentFactory {
   static get CONFIGS() {
     return [
       {
+        id: "CPTTWBD",
+        artist: "Calum Pratt",
+        album: "This Time Will Be Different",
+        mediaId: 3027591022,
+        embedType: ContentFactory.TYPES.BANDCAMP,
+        embedLink:
+          "https://calumpratt.bandcamp.com/album/this-time-will-be-different",
+        description:
+          "The second full length work from British singer-songwriter, long-time collaborator, confidant and proper mate Calum Pratt. Our proudest moment to date.",
+      },
+      {
         id: "SHSR",
         artist: "Sam Hanlan",
         album: "Sharp Relief",
