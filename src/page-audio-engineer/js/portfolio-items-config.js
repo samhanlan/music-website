@@ -121,9 +121,10 @@ class ContentFactory {
         id: "CPE",
         artist: "Calum Pratt",
         album: "Essential Nature",
-        mediaId: 1240848739,
+        mediaId: 3546135471,
         embedType: ContentFactory.TYPES.BANDCAMP,
-        embedLink: "http://calumpratt.bandcamp.com/album/essential-nature",
+        embedLink:
+          "http://calumpratt.bandcamp.com/album/essential-nature-remastered",
         description:
           "Solo acoustic songwriter, studio recording taking in a host of orchestral elements in this debut from Calum.<br/><br/><b>Credits:</b><br/>Performer<br/>Recording Engineer<br/>Producer<br/>Mix Engineer",
       },
