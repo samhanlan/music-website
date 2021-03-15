@@ -1,4 +1,4 @@
-const merge = require("webpack-merge");
+const { merge } = require("webpack-merge");
 const common = require("./webpack.common");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -6,7 +6,6 @@ const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const HTMLInlineCSSWebpackPlugin = require("html-inline-css-webpack-plugin")
   .default;
-const HtmlWebpackInlineSourcePlugin = require("html-webpack-inline-source-plugin");
 
 const getHtmlPluginConfig = (name) => ({
   template: `./src/page-${name}/${name}.html`,
@@ -28,17 +27,17 @@ module.exports = merge(common, {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      moduleFilename: ({ name }) =>
-        name === "index"
+      chunkFilename: ({ chunk: { name } }) => {
+        return name === "index"
           ? "index.[contentHash].css"
-          : `${name}/${name}.[contentHash].css`,
+          : `${name}/${name}.[contentHash].css`;
+      },
     }),
     new HtmlWebpackPlugin(getHtmlPluginConfig("index")),
     new HtmlWebpackPlugin(getHtmlPluginConfig("singer-songwriter")),
     new HtmlWebpackPlugin(getHtmlPluginConfig("freedom-and-such")),
     new HtmlWebpackPlugin(getHtmlPluginConfig("audio-engineer")),
     new HTMLInlineCSSWebpackPlugin(),
-    new HtmlWebpackInlineSourcePlugin(),
   ],
   optimization: {
     minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()],
