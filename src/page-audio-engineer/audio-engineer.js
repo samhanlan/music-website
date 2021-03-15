@@ -21,7 +21,7 @@ function onFirstTouch() {
 
 function applyRouteViaCurrentHash() {
   const hash = getCurrentRouteFromHash();
-  const route = routes.find(route => hash === route) || "home";
+  const route = routes.find((route) => hash === route) ?? "home";
 
   applyTemplateViaRoute(route);
   applyActiveNavLinkElViaRoute(route);
@@ -29,7 +29,7 @@ function applyRouteViaCurrentHash() {
 }
 
 function getCurrentRouteFromHash() {
-  return (window.location.hash || "").replace("#page-", "");
+  return (window.location.hash ?? "").replace("#page-", "");
 }
 
 function applyTemplateViaRoute(route) {

@@ -14,7 +14,7 @@ class ContentFactory {
   static get TYPES() {
     return {
       BANDCAMP: "bandcamp",
-      NO_EMBED: "none"
+      NO_EMBED: "none",
     };
   }
   static get CONFIGS() {
@@ -38,7 +38,7 @@ class ContentFactory {
         embedType: ContentFactory.TYPES.BANDCAMP,
         embedLink: "https://samhanlan.bandcamp.com/album/sharp-relief",
         description:
-          "My debut adventure as an acoustic-driven singer-songwriter. All songs except one were written over the past years living in Berlin, and this record bears the fingerprints of many brilliant people I've met here so far. <br/><br/><b>Credits:</b><br/>Performer</br>Recording Engineer<br/>Producer<br/>Mix Engineer"
+          "My debut adventure as an acoustic-driven singer-songwriter. All songs except one were written over the past years living in Berlin, and this record bears the fingerprints of many brilliant people I've met here so far. <br/><br/><b>Credits:</b><br/>Performer</br>Recording Engineer<br/>Producer<br/>Mix Engineer",
       },
       {
         id: "FAS",
@@ -48,7 +48,7 @@ class ContentFactory {
         embedType: ContentFactory.TYPES.BANDCAMP,
         embedLink: "http://freedomandsuch.bandcamp.com/album/windbreaker-ep",
         description:
-          "My alias project, based on odd voice memo phone recordings and found sounds. Windbreaker was self-produced across several years and features various important people that are properly thanked on the Bandcamp page.<br/><br/><b>Credits:</b><br/>Performer<br/>Recording Engineer<br/>Producer<br/>Mix Engineer"
+          "My alias project, based on odd voice memo phone recordings and found sounds. Windbreaker was self-produced across several years and features various important people that are properly thanked on the Bandcamp page.<br/><br/><b>Credits:</b><br/>Performer<br/>Recording Engineer<br/>Producer<br/>Mix Engineer",
       },
       {
         id: "CAL",
@@ -58,7 +58,7 @@ class ContentFactory {
         embedType: ContentFactory.TYPES.BANDCAMP,
         embedLink: "http://childrenandlions.bandcamp.com/album/children-lions",
         description:
-          "Post-rock band, produced and recorded with an emphasis on big, live space. The record was made in the Dorking Quaker Hall, over many days tracking and living in the space. Electronic production added post tracking.<br/><br/><b>Credits:</b><br/>Performer</br>Recording Engineer<br/>Producer<br/>Mix Engineer"
+          "Post-rock band, produced and recorded with an emphasis on big, live space. The record was made in the Dorking Quaker Hall, over many days tracking and living in the space. Electronic production added post tracking.<br/><br/><b>Credits:</b><br/>Performer</br>Recording Engineer<br/>Producer<br/>Mix Engineer",
       },
       {
         id: "CPA",
@@ -68,7 +68,7 @@ class ContentFactory {
         mediaId: 3005936806,
         embedLink: "http://calumpratt.bandcamp.com/album/adrift",
         description:
-          "Solo acoustic songwriter, long term collaborator, often studio assistant, always a great friend.<br/>Studio recording with old sixties strategy in its production - dead acoustic with tape recording nuance.<br/><br/><b>Credits:</b><br/>Recording Engineer<br/>Producer<br/>Mix Engineer"
+          "Solo acoustic songwriter, long term collaborator, often studio assistant, always a great friend.<br/>Studio recording with old sixties strategy in its production - dead acoustic with tape recording nuance.<br/><br/><b>Credits:</b><br/>Recording Engineer<br/>Producer<br/>Mix Engineer",
       },
       {
         id: "3PS",
@@ -79,7 +79,7 @@ class ContentFactory {
         embedLink:
           "http://threepairsofshoes.bandcamp.com/album/three-pairs-of-shoes",
         description:
-          "Folk-rock collective, recorded with Lewis Griffiths, Hugo Goggin and the band in the rafters of an old Cardiff church. Combining folk lore with modern folk, providing a unique and siren sound.<br/><br/><b>Credits:</b><br/>Performer<br/>Recording Engineer<br/>Co-Producer<br/>Mix Engineer"
+          "Folk-rock collective, recorded with Lewis Griffiths, Hugo Goggin and the band in the rafters of an old Cardiff church. Combining folk lore with modern folk, providing a unique and siren sound.<br/><br/><b>Credits:</b><br/>Performer<br/>Recording Engineer<br/>Co-Producer<br/>Mix Engineer",
       },
       {
         id: "GF",
@@ -89,7 +89,7 @@ class ContentFactory {
         mediaId: 883109027,
         embedLink: "http://gritandgold.bandcamp.com/album/grit-gold-ep",
         description:
-          "Solo acoustic songwriter, recorded around the house of Ricky Tobin in various crevices and spaces. Working with lean, sharp acoustic guitar - capturing and mixing the EP with maximum precision and clarity.<br/><br/><b>Credits:</b><br/>Recording Engineer<br/>Producer<br/>Mix Engineer"
+          "Solo acoustic songwriter, recorded around the house of Ricky Tobin in various crevices and spaces. Working with lean, sharp acoustic guitar - capturing and mixing the EP with maximum precision and clarity.<br/><br/><b>Credits:</b><br/>Recording Engineer<br/>Producer<br/>Mix Engineer",
       },
       {
         id: "BS",
@@ -97,7 +97,7 @@ class ContentFactory {
         album: "Personal Demons",
         embedType: ContentFactory.TYPES.NO_EMBED,
         description:
-          "Solo singer songwriter. Brighton-based, Bella was one of the first musicians I ever produced and recorded. Memories of prepared pianos, harpsichords, churches and a very snowy winter behind this production which is part of a greater collection of recordings.<br/><br/><b>Credits:</b><br/>Performer<br/>Recording Engineer<br/>Producer<br/>Mix Engineer"
+          "Solo singer songwriter. Brighton-based, Bella was one of the first musicians I ever produced and recorded. Memories of prepared pianos, harpsichords, churches and a very snowy winter behind this production which is part of a greater collection of recordings.<br/><br/><b>Credits:</b><br/>Performer<br/>Recording Engineer<br/>Producer<br/>Mix Engineer",
       },
       {
         id: "DL",
@@ -105,7 +105,7 @@ class ContentFactory {
         album: "Paper Hearts",
         embedType: ContentFactory.TYPES.NO_EMBED,
         description:
-          "Solo acoustic songwriter. Having met in Cardiff while I was on staff waiting tables, Paper Hearts was recorded at my studio, produced with a treatment that lets her breathtaking voice shine.<br/><br/><b>Credits:</b><br/>Performer<br/>Recording Engineer<br/>Producer<br/>Mix Engineer"
+          "Solo acoustic songwriter. Having met in Cardiff while I was on staff waiting tables, Paper Hearts was recorded at my studio, produced with a treatment that lets her breathtaking voice shine.<br/><br/><b>Credits:</b><br/>Performer<br/>Recording Engineer<br/>Producer<br/>Mix Engineer",
       },
       {
         id: "OT",
@@ -115,7 +115,7 @@ class ContentFactory {
         embedType: ContentFactory.TYPES.BANDCAMP,
         embedLink: "http://ornamenttournaments.bandcamp.com/album/tacheles",
         description:
-          "Math rock trio. Horsham rascals whose carefully composed slap-happy sound made for a roomy rock record featuring sessions in the Dorking Quaker Hall, my studio and a conservatory.<br/><br/><b>Credits:</b><br/>Performer<br/>Recording Engineer<br/>Producer<br/>Mix Engineer"
+          "Math rock trio. Horsham rascals whose carefully composed slap-happy sound made for a roomy rock record featuring sessions in the Dorking Quaker Hall, my studio and a conservatory.<br/><br/><b>Credits:</b><br/>Performer<br/>Recording Engineer<br/>Producer<br/>Mix Engineer",
       },
       {
         id: "CPE",
@@ -125,8 +125,8 @@ class ContentFactory {
         embedType: ContentFactory.TYPES.BANDCAMP,
         embedLink: "http://calumpratt.bandcamp.com/album/essential-nature",
         description:
-          "Solo acoustic songwriter, studio recording taking in a host of orchestral elements in this debut from Calum.<br/><br/><b>Credits:</b><br/>Performer<br/>Recording Engineer<br/>Producer<br/>Mix Engineer"
-      }
+          "Solo acoustic songwriter, studio recording taking in a host of orchestral elements in this debut from Calum.<br/><br/><b>Credits:</b><br/>Performer<br/>Recording Engineer<br/>Producer<br/>Mix Engineer",
+      },
     ];
   }
   constructor(portfolioItemEl) {
