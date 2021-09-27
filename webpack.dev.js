@@ -17,7 +17,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new HtmlWebpackPlugin(getHtmlPluginConfig("index")),
-    new HtmlWebpackPlugin(getHtmlPluginConfig("singer-songwriter")),
+    new HtmlWebpackPlugin(getHtmlPluginConfig("lifetime-access")),
     new HtmlWebpackPlugin(getHtmlPluginConfig("freedom-and-such")),
     new HtmlWebpackPlugin(getHtmlPluginConfig("audio-engineer")),
   ],
@@ -39,7 +39,7 @@ module.exports = merge(common, {
       });
       app.get("/singer-songwriter", function (_req, res) {
         res.sendFile(
-          path.join(__dirname, "dist/singer-songwriter/singer-songwriter.html")
+          path.join(__dirname, "dist/lifetime-access/lifetime-access.html")
         );
       });
       app.get("/audio-engineer", function (_req, res) {

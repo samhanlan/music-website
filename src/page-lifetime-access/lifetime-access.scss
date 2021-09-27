@@ -1,0 +1,148 @@
+$dark: #14171c;
+$light: #fafae5;
+
+@import "../styles/normalise";
+@import "../styles/viewports";
+@import "./styles/audio-player";
+
+html,
+body {
+  height: 200%;
+}
+
+html {
+  font-size: 62.5%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: $dark;
+  color: $light;
+  font-family: sans-serif;
+  font-size: 1.8rem;
+  position: relative;
+}
+
+.album-name {
+  position: fixed;
+
+  &.sam {
+    top: 1em;
+    left: 1em;
+  }
+
+  &.hanlan {
+    top: 1em;
+    right: 1em;
+  }
+
+  &.lifetime {
+    bottom: 1em;
+    left: 1em;
+  }
+  &.access {
+    bottom: 1em;
+    right: 1em;
+  }
+}
+
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.inner-container {
+  overflow: hidden;
+  position: relative;
+  width: 33vw;
+  min-width: 420px;
+  max-width: 1440px;
+  padding-bottom: 99.5%;
+  background-color: rgb(194, 178, 178);
+  transform: scale(7);
+  opacity: 0;
+  animation-name: zoom-out;
+  transform-origin: center;
+  animation-delay: 1s;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+
+  &::before,
+  &::after {
+    content: "";
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    left: 0;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    background-image: url(assets/cover_top.png);
+    padding-bottom: 48.34%;
+    z-index: 1;
+  }
+
+  &::after {
+    position: fixed;
+    bottom: -2px;
+    background-image: url(assets/cover_bottom.png);
+    padding-bottom: 100%;
+    z-index: 2;
+  }
+}
+
+@keyframes zoom-out {
+  from {
+    transform: scale(7);
+  }
+  10% {
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+section {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.release-date {
+  color: white;
+  margin: 1em 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  a {
+    color: white;
+    display: flex;
+    align-items: center;
+
+    &:first-of-type {
+      margin-right: 1.5em;
+    }
+  }
+
+  svg {
+    width: 2em;
+    fill: white;
+  }
+}

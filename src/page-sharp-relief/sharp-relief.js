@@ -1,6 +1,6 @@
-import "./singer-songwriter.scss";
+import "./sharp-relief.scss";
 
-(function() {
+(function () {
   window.onload = function initUI() {
     initAudio();
     initFooterStyle();
@@ -9,9 +9,8 @@ import "./singer-songwriter.scss";
   };
 
   function setFooterCopyright() {
-    document.getElementById(
-      "copyright-year"
-    ).innerHTML = new Date().getFullYear();
+    document.getElementById("copyright-year").innerHTML =
+      new Date().getFullYear();
   }
 
   function initScrollInteraction() {
@@ -23,7 +22,7 @@ import "./singer-songwriter.scss";
     function scrollToDestination() {
       scrollDestinationSection.scrollIntoView({
         behavior: "smooth",
-        block: "start"
+        block: "start",
       });
     }
   }
@@ -71,8 +70,9 @@ import "./singer-songwriter.scss";
 
       onPlaybackElapse = setInterval(() => {
         setCurrentTrackNameDisplay();
-        progressBar.style.width = `${(audio.currentTime / audio.duration) *
-          100}%`;
+        progressBar.style.width = `${
+          (audio.currentTime / audio.duration) * 100
+        }%`;
       }, 1000);
 
       trackNameDisplayEl.classList.remove("hide");

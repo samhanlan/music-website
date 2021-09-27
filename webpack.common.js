@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   entry: {
     index: "./src/page-index/index.js",
-    "singer-songwriter": "./src/page-singer-songwriter/singer-songwriter.js",
+    "lifetime-access": "./src/page-lifetime-access/lifetime-access.js",
     "freedom-and-such": "./src/page-freedom-and-such/freedom-and-such.js",
     "audio-engineer": "./src/page-audio-engineer/audio-engineer.js",
   },
