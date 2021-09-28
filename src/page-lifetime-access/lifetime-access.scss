@@ -126,22 +126,26 @@ section {
   width: 100%;
   color: $light;
   padding: 1em;
+  text-align: center;
 }
 
 .track-title {
-  text-align: center;
   margin: 0.5em;
+  cursor: pointer;
 }
 
 .lyrics {
   line-height: 1.5;
-  height: 0;
-  overflow: hidden;
-}
+  padding: 3em 1em;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 1;
+  pointer-events: none;
 
-.lyrics-checkbox:checked {
-  & ~ .lyrics {
-    height: auto;
+  &.active {
+    opacity: 1;
   }
 }
 

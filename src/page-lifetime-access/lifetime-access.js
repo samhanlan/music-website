@@ -3,7 +3,23 @@ import "./lifetime-access.scss";
 (function () {
   window.onload = function initUI() {
     initScrollInteraction();
+
+    ["HW", "TSM", "LA", "TW", "UTB"].forEach(initLyricsUI);
   };
+
+  function initLyricsUI(trackId) {
+    const btn = document.getElementById(trackId);
+    const lyrics = document.getElementById(`lyrics-${trackId}`);
+    btn.addEventListener("click", () => {
+      document
+        .querySelectorAll(`.lyrics.active:not(#lyrics-${trackId})`)
+        .forEach((x) => x.classList.remove("active"));
+
+      lyrics.classList.contains("active")
+        ? lyrics.classList.remove("active")
+        : lyrics.classList.add("active");
+    });
+  }
 
   const colours = ["red", "blue", "purple", "green", "rgb(194, 178, 178)"];
   function initScrollInteraction() {
@@ -27,7 +43,7 @@ import "./lifetime-access.scss";
 
     window.addEventListener("scroll", function (e) {
       offsetBot = window.scrollY / 20;
-      offsetTop = offsetBot + 99.5;
+      offsetTop = window.scrollY / 15 + 99.5;
 
       window.requestAnimationFrame(function () {
         applyStyles({ offsetTop, offsetBot });
