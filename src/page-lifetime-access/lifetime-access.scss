@@ -21,13 +21,14 @@ html {
 body {
   background-color: $dark;
   color: $light;
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1.8rem;
   position: relative;
 }
 
 .album-name {
   position: fixed;
+  font-weight: bold;
 
   &.sam {
     top: 1em;
@@ -97,6 +98,10 @@ body {
     padding-bottom: 100%;
     z-index: 2;
   }
+
+  &.enable-click-thru::after {
+    pointer-events: none;
+  }
 }
 
 @keyframes zoom-out {
@@ -114,35 +119,62 @@ body {
 
 section {
   position: absolute;
-  text-align: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 0;
+  width: 100%;
+  color: $light;
+  padding: 1em;
 }
 
-.release-date {
-  color: white;
-  margin: 1em 0;
+.track-title {
+  text-align: center;
+  margin: 0.5em;
+}
+
+.lyrics {
+  line-height: 1.5;
+  height: 0;
+  overflow: hidden;
+}
+
+.lyrics-checkbox:checked {
+  & ~ .lyrics {
+    height: auto;
+  }
 }
 
 .footer {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  margin-top: 2em;
 
   a {
-    color: white;
-    display: flex;
-    align-items: center;
+    color: $light;
+    font-weight: medium;
 
     &:first-of-type {
       margin-right: 1.5em;
     }
-  }
 
-  svg {
-    width: 2em;
-    fill: white;
+    & > svg {
+      fill: $light;
+      width: 1em;
+      height: 1em;
+      vertical-align: middle;
+    }
+
+    span {
+      vertical-align: middle;
+    }
   }
+}
+
+.bandcamp-icon {
+  transform: skew(-30deg);
+  width: 1em;
+  height: 0.7em;
+  background-color: $light;
+  display: inline-block;
+  margin-right: 0.25em;
+  vertical-align: middle;
 }

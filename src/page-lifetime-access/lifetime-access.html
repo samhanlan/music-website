@@ -15,30 +15,83 @@
     <p class="album-name lifetime">LIFETIME</p>
     <p class="album-name access">ACCESS</p>
     <main class="container">
+      <p class="lyrics">
+        What a time to be alive<br />
+        Without a cause, you’re out the door<br />
+        Say “hello, world”, what are you for?<br />
+        What are we moving towards?<br />
+        You’ve painted us in to a corner<br />
+        Pull me from my nest<br />
+        Throw me under your wheels<br />
+        Capsized and desperate<br />
+        Restless, unheeding<br />
+        String me line, toss me a dime<br />
+        I tried being helpless<br />
+        But nothing much comes of it<br />
+        Wind me up, before I run out the clock<br />
+        With my head on the block<br />
+        Shake me from my tree<br />
+        Put me to work in your fields Morning and evening<br />
+        Hold me<br />
+        Feed me<br />
+        Both the captain and the crew<br />
+        Are abandoning you<br />
+        Do you know how to turn this vessel alone?<br />
+        Can you read your map from the stars?<br />
+        Can you navigate back to the harbour?<br />
+        Or stick like a pig on the iceberg<br />
+        Or snag on the rocks like the anchor
+      </p>
       <div class="inner-container" id="inner-container">
         <section id="inner-section">
-          <p>HELLO, WORLD!</p>
-          <p>THAT'S SO ME</p>
-          <p>LIFETIME ACCESS</p>
-          <p>THE WIZARD</p>
-          <p>UNDER THE BANNER</p>
-          <p class="release-date">01/10/2021</p>
+          <input
+            class="lyrics-checkbox"
+            type="checkbox"
+            id="HW"
+            style="display: none"
+          />
+          <label for="HW">
+            <p class="track-title">HELLO, WORLD!</p>
+          </label>
+          <!-- <p class="lyrics">
+            What a time to be alive<br />
+            Without a cause, you’re out the door<br />
+            Say “hello, world”, what are you for?<br />
+            What are we moving towards?<br />
+            You’ve painted us in to a corner<br />
+            Pull me from my nest<br />
+            Throw me under your wheels<br />
+            Capsized and desperate<br />
+            Restless, unheeding<br />
+            String me line, toss me a dime<br />
+            I tried being helpless<br />
+            But nothing much comes of it<br />
+            Wind me up, before I run out the clock<br />
+            With my head on the block<br />
+            Shake me from my tree<br />
+            Put me to work in your fields Morning and evening<br />
+            Hold me<br />
+            Feed me<br />
+            Both the captain and the crew<br />
+            Are abandoning you<br />
+            Do you know how to turn this vessel alone?<br />
+            Can you read your map from the stars?<br />
+            Can you navigate back to the harbour?<br />
+            Or stick like a pig on the iceberg<br />
+            Or snag on the rocks like the anchor
+          </p> -->
+          <p class="track-title">THAT'S SO ME</p>
+          <p class="track-title">LIFETIME ACCESS</p>
+          <p class="track-title">THE WIZARD</p>
+          <p class="track-title">UNDER THE BANNER</p>
           <div class="footer">
             <a
               class="release-cta"
               href="https://samhanlan.bandcamp.com/releases"
               target="_blank"
             >
-              <svg
-                class="social-icon icon-bandcamp"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-              >
-                <use xlink:href="#bandcamp-icon" viewBox="0 0 24 24"></use>
-              </svg>
-              <span class="release-cta-text">Download</span>
+              <span class="bandcamp-icon"></span>
+              <span class="release-cta-text">download</span>
             </a>
             <a
               class="release-cta"
@@ -48,13 +101,11 @@
               <svg
                 class="social-icon icon-spotify"
                 role="img"
-                width="24"
-                height="24"
-                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
               >
-                <use xlink:href="#spotify-icon" viewPort="0 0 24 24"></use>
+                <use xlink:href="#spotify-icon"></use>
               </svg>
-              <span class="release-cta-text">Stream</span>
+              <span class="release-cta-text">stream</span>
             </a>
           </div>
         </section>

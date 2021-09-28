@@ -19,14 +19,16 @@ import "./lifetime-access.scss";
     function applyStyles({ offsetTop, offsetBot }) {
       inner.style.paddingBottom = `${offsetTop}%`;
       innerSection.style.transform = `translate(-50%, -${offsetBot}%)`;
+      inner.classList[offsetBot > 0 ? "add" : "remove"]("enable-click-thru");
     }
 
     applyStyles({ offsetTop: 99.5, offsetBot: 50 });
     window.scrollTo(0, 0);
 
     window.addEventListener("scroll", function (e) {
-      offsetTop = window.scrollY / 20 + 99.5;
       offsetBot = window.scrollY / 20;
+      offsetTop = offsetBot + 99.5;
+
       window.requestAnimationFrame(function () {
         applyStyles({ offsetTop, offsetBot });
       });
