@@ -4,8 +4,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-const HTMLInlineCSSWebpackPlugin = require("html-inline-css-webpack-plugin")
-  .default;
+const HTMLInlineCSSWebpackPlugin =
+  require("html-inline-css-webpack-plugin").default;
 
 const getHtmlPluginConfig = (name) => ({
   template: `./src/page-${name}/${name}.html`,
@@ -23,7 +23,7 @@ const getHtmlPluginConfig = (name) => ({
 module.exports = merge(common, {
   mode: "production",
   output: {
-    publicPath: "http://samhanlan.com/",
+    publicPath: "https://www.samhanlan.com/",
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -34,7 +34,7 @@ module.exports = merge(common, {
       },
     }),
     new HtmlWebpackPlugin(getHtmlPluginConfig("index")),
-    new HtmlWebpackPlugin(getHtmlPluginConfig("singer-songwriter")),
+    new HtmlWebpackPlugin(getHtmlPluginConfig("lifetime-access")),
     new HtmlWebpackPlugin(getHtmlPluginConfig("freedom-and-such")),
     new HtmlWebpackPlugin(getHtmlPluginConfig("audio-engineer")),
     new HTMLInlineCSSWebpackPlugin(),
