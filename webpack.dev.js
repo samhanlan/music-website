@@ -37,7 +37,7 @@ module.exports = merge(common, {
       app.get("/", function (_req, res) {
         res.sendFile(path.join(__dirname, "dist/index.html"));
       });
-      app.get("/singer-songwriter", function (_req, res) {
+      app.get("/lifetime-access", function (_req, res) {
         res.sendFile(
           path.join(__dirname, "dist/lifetime-access/lifetime-access.html")
         );
