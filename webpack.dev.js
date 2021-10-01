@@ -13,7 +13,7 @@ const getHtmlPluginConfig = (name) => ({
 module.exports = merge(common, {
   mode: "development",
   output: {
-    publicPath: "http://localhost:8080/",
+    publicPath: "/",
   },
   plugins: [
     new HtmlWebpackPlugin(getHtmlPluginConfig("index")),

@@ -23,7 +23,7 @@ const getHtmlPluginConfig = (name) => ({
 module.exports = merge(common, {
   mode: "production",
   output: {
-    publicPath: "https://www.samhanlan.com/",
+    publicPath: "/",
   },
   plugins: [
     new MiniCssExtractPlugin({
