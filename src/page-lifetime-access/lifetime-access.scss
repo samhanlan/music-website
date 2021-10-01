@@ -86,7 +86,7 @@ body {
   &::before {
     position: absolute;
     top: 0;
-    background-image: url(assets/cover_top.png);
+    background-image: url(assets/cover_top@2x.png);
     padding-bottom: 48.34%;
     z-index: 1;
   }
@@ -94,7 +94,7 @@ body {
   &::after {
     position: fixed;
     bottom: -2px;
-    background-image: url(assets/cover_bottom.png);
+    background-image: url(assets/cover_bottom@2x.png);
     padding-bottom: 100%;
     z-index: 2;
   }
